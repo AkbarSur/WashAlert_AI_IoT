@@ -1,0 +1,6 @@
+# Hanya untuk laptop. Tidak perlu dan tidak dipasang di HP.
+# Versi yang benar-benar dipakai saat pengujian (Python 3.13). scikit-learn 1.9 butuh Python >= 3.11, NumPy 2.5 butuh >= 3.12.
+scikit-learn==1.9.1
+numpy==2.5.3
+joblib==1.6.0
+matplotlib==3.11.2

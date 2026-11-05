@@ -1,0 +1,31 @@
+{
+  "clock_offset_ms": 0,
+  "cycle_id": "SYNM1_C05",
+  "data_kind": "synthetic",
+  "device_id": "edge1",
+  "difficulty": "hard",
+  "interval_s": 0.1,
+  "machine_id": "SYNM1",
+  "machine_type": "SINTETIS",
+  "n_invalid": 0,
+  "n_rows": 3364,
+  "n_stale": 0,
+  "notes": "Data buatan generator, bukan pengukuran",
+  "operator": "GEN",
+  "orientation": "SINTETIS",
+  "phone_model": "SINTETIS",
+  "placement": "SINTETIS",
+  "program": "SINTETIS",
+  "samples_per_window": 5,
+  "schema_version": 2,
+  "seed": 46,
+  "sensor_fault_seen": false,
+  "session_id": "SYNTHETIC_SYNM1_C05",
+  "session_type": "cycle",
+  "source": "generate_synthetic",
+  "status": "complete",
+  "units": {
+    "accel": "m/s^2",
+    "gyro": "rad/s"
+  }
+}

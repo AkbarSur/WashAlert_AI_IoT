@@ -1,0 +1,265 @@
+{
+  "data_kind": "synthetic",
+  "dataset_id": "syn_hard_v1",
+  "drop_reasons": {
+    "agregat_data_kurang": 60,
+    "agregat_label_campur_atau_transisi": 1133,
+    "edge_sampel_kurang": 7,
+    "edge_terlalu_banyak_stale": 2
+  },
+  "rows_invalid": 852,
+  "rows_quarantined": 0,
+  "rows_total": 28838,
+  "rows_usable": 27986,
+  "sessions": [
+    {
+      "drops": {
+        "agregat_data_kurang": 6,
+        "agregat_label_campur_atau_transisi": 10,
+        "edge_sampel_kurang": 1
+      },
+      "issues": [
+        {
+          "action": "MARK_INVALID",
+          "code": "V10",
+          "count": 28,
+          "message": "Sampel memakai nilai sensor lama"
+        }
+      ],
+      "median_dt_s": 0.6264,
+      "rows_invalid": 28,
+      "rows_quarantined": 0,
+      "rows_total": 959,
+      "rows_usable": 931,
+      "session_id": "SYNTHETIC_IDLE_01",
+      "status": "ACCEPTED",
+      "windows": 175
+    },
+    {
+      "drops": {
+        "agregat_data_kurang": 6,
+        "agregat_label_campur_atau_transisi": 10,
+        "edge_sampel_kurang": 1
+      },
+      "issues": [
+        {
+          "action": "MARK_INVALID",
+          "code": "V10",
+          "count": 30,
+          "message": "Sampel memakai nilai sensor lama"
+        }
+      ],
+      "median_dt_s": 0.6255,
+      "rows_invalid": 30,
+      "rows_quarantined": 0,
+      "rows_total": 959,
+      "rows_usable": 929,
+      "session_id": "SYNTHETIC_IDLE_02",
+      "status": "ACCEPTED",
+      "windows": 175
+    },
+    {
+      "drops": {
+        "agregat_data_kurang": 6,
+        "agregat_label_campur_atau_transisi": 140
+      },
+      "issues": [
+        {
+          "action": "MARK_INVALID",
+          "code": "V10",
+          "count": 101,
+          "message": "Sampel memakai nilai sensor lama"
+        }
+      ],
+      "median_dt_s": 0.6246,
+      "rows_invalid": 101,
+      "rows_quarantined": 0,
+      "rows_total": 3365,
+      "rows_usable": 3264,
+      "session_id": "SYNTHETIC_SYNM1_C01",
+      "status": "ACCEPTED",
+      "windows": 527
+    },
+    {
+      "drops": {
+        "agregat_data_kurang": 6,
+        "agregat_label_campur_atau_transisi": 139
+      },
+      "issues": [
+        {
+          "action": "MARK_INVALID",
+          "code": "V10",
+          "count": 99,
+          "message": "Sampel memakai nilai sensor lama"
+        }
+      ],
+      "median_dt_s": 0.6242,
+      "rows_invalid": 99,
+      "rows_quarantined": 0,
+      "rows_total": 3370,
+      "rows_usable": 3271,
+      "session_id": "SYNTHETIC_SYNM1_C02",
+      "status": "ACCEPTED",
+      "windows": 529
+    },
+    {
+      "drops": {
+        "agregat_data_kurang": 6,
+        "agregat_label_campur_atau_transisi": 139,
+        "edge_sampel_kurang": 1,
+        "edge_terlalu_banyak_stale": 1
+      },
+      "issues": [
+        {
+          "action": "MARK_INVALID",
+          "code": "V10",
+          "count": 110,
+          "message": "Sampel memakai nilai sensor lama"
+        }
+      ],
+      "median_dt_s": 0.6249,
+      "rows_invalid": 110,
+      "rows_quarantined": 0,
+      "rows_total": 3364,
+      "rows_usable": 3254,
+      "session_id": "SYNTHETIC_SYNM1_C03",
+      "status": "ACCEPTED",
+      "windows": 526
+    },
+    {
+      "drops": {
+        "agregat_data_kurang": 6,
+        "agregat_label_campur_atau_transisi": 138,
+        "edge_sampel_kurang": 1,
+        "edge_terlalu_banyak_stale": 1
+      },
+      "issues": [
+        {
+          "action": "MARK_INVALID",
+          "code": "V10",
+          "count": 77,
+          "message": "Sampel memakai nilai sensor lama"
+        }
+      ],
+      "median_dt_s": 0.6245,
+      "rows_invalid": 77,
+      "rows_quarantined": 0,
+      "rows_total": 3366,
+      "rows_usable": 3289,
+      "session_id": "SYNTHETIC_SYNM1_C04",
+      "status": "ACCEPTED",
+      "windows": 528
+    },
+    {
+      "drops": {
+        "agregat_data_kurang": 6,
+        "agregat_label_campur_atau_transisi": 139,
+        "edge_sampel_kurang": 1
+      },
+      "issues": [
+        {
+          "action": "MARK_INVALID",
+          "code": "V10",
+          "count": 106,
+          "message": "Sampel memakai nilai sensor lama"
+        }
+      ],
+      "median_dt_s": 0.6252,
+      "rows_invalid": 106,
+      "rows_quarantined": 0,
+      "rows_total": 3364,
+      "rows_usable": 3258,
+      "session_id": "SYNTHETIC_SYNM1_C05",
+      "status": "ACCEPTED",
+      "windows": 527
+    },
+    {
+      "drops": {
+        "agregat_data_kurang": 6,
+        "agregat_label_campur_atau_transisi": 140,
+        "edge_sampel_kurang": 1
+      },
+      "issues": [
+        {
+          "action": "MARK_INVALID",
+          "code": "V10",
+          "count": 86,
+          "message": "Sampel memakai nilai sensor lama"
+        }
+      ],
+      "median_dt_s": 0.6242,
+      "rows_invalid": 86,
+      "rows_quarantined": 0,
+      "rows_total": 3363,
+      "rows_usable": 3277,
+      "session_id": "SYNTHETIC_SYNM1_C06",
+      "status": "ACCEPTED",
+      "windows": 526
+    },
+    {
+      "drops": {
+        "agregat_data_kurang": 6,
+        "agregat_label_campur_atau_transisi": 139
+      },
+      "issues": [
+        {
+          "action": "MARK_INVALID",
+          "code": "V10",
+          "count": 103,
+          "message": "Sampel memakai nilai sensor lama"
+        }
+      ],
+      "median_dt_s": 0.625,
+      "rows_invalid": 103,
+      "rows_quarantined": 0,
+      "rows_total": 3365,
+      "rows_usable": 3262,
+      "session_id": "SYNTHETIC_SYNM1_C07",
+      "status": "ACCEPTED",
+      "windows": 528
+    },
+    {
+      "drops": {
+        "agregat_data_kurang": 6,
+        "agregat_label_campur_atau_transisi": 139,
+        "edge_sampel_kurang": 1
+      },
+      "issues": [
+        {
+          "action": "MARK_INVALID",
+          "code": "V10",
+          "count": 112,
+          "message": "Sampel memakai nilai sensor lama"
+        }
+      ],
+      "median_dt_s": 0.6256,
+      "rows_invalid": 112,
+      "rows_quarantined": 0,
+      "rows_total": 3363,
+      "rows_usable": 3251,
+      "session_id": "SYNTHETIC_SYNM1_C08",
+      "status": "ACCEPTED",
+      "windows": 527
+    }
+  ],
+  "sessions_accepted": 10,
+  "sessions_rejected": 0,
+  "windows": 4568,
+  "windows_per_label": {
+    "IDLE": 1061,
+    "SPIN": 667,
+    "WASHING": 2840
+  },
+  "windows_per_session": {
+    "SYNTHETIC_IDLE_01": 175,
+    "SYNTHETIC_IDLE_02": 175,
+    "SYNTHETIC_SYNM1_C01": 527,
+    "SYNTHETIC_SYNM1_C02": 529,
+    "SYNTHETIC_SYNM1_C03": 526,
+    "SYNTHETIC_SYNM1_C04": 528,
+    "SYNTHETIC_SYNM1_C05": 527,
+    "SYNTHETIC_SYNM1_C06": 526,
+    "SYNTHETIC_SYNM1_C07": 528,
+    "SYNTHETIC_SYNM1_C08": 527
+  }
+}

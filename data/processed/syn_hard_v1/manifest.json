@@ -1,0 +1,156 @@
+{
+  "data_kind": "synthetic",
+  "dataset_id": "syn_hard_v1",
+  "feature_columns": [
+    "motion_rms_mean",
+    "motion_rms_std",
+    "motion_rms_max",
+    "rotation_rad_mean",
+    "rotation_rad_std",
+    "rotation_rad_max",
+    "acc_dyn_rms_mean",
+    "acc_dyn_rms_std",
+    "acc_dyn_rms_max",
+    "acc_mag_ptp_mean",
+    "acc_mag_ptp_std",
+    "acc_mag_ptp_max",
+    "gyro_rms_mean",
+    "gyro_rms_std",
+    "gyro_rms_max",
+    "gyro_max_mean",
+    "gyro_max_std",
+    "gyro_max_max"
+  ],
+  "feature_schema_version": 1,
+  "n_windows": 4568,
+  "raw_schema_version": 2,
+  "sessions": [
+    {
+      "cycle_id": null,
+      "machine_id": "SYNM1",
+      "program": "SINTETIS",
+      "session_id": "SYNTHETIC_IDLE_01",
+      "session_type": "idle",
+      "sha256": {
+        "labels.csv": "eada018ff79b5a327dba5c6252205658ac940c3293a89b025d7666da141539bc",
+        "meta.json": "e93e721152cc8c1cb3994dead13a530e28502324e168dc515cb686794927e44e",
+        "raw.csv": "b427a8164ac92c8c24f5fef438bec70878056f2648762230a06975e8b4bd4049"
+      }
+    },
+    {
+      "cycle_id": null,
+      "machine_id": "SYNM1",
+      "program": "SINTETIS",
+      "session_id": "SYNTHETIC_IDLE_02",
+      "session_type": "idle",
+      "sha256": {
+        "labels.csv": "4c7c95666dda19101173a41e39cfb727df0ddc1d21111d101f6f2f042ab73cf0",
+        "meta.json": "9e19a8206586d5b9b3daef0a100b2b962b38f208e82f8b8c908c87c5958bb654",
+        "raw.csv": "2026a37fe0931f6ac1fd0ca937abbe4c76247d3688d8d47d5130653093763d21"
+      }
+    },
+    {
+      "cycle_id": "SYNM1_C01",
+      "machine_id": "SYNM1",
+      "program": "SINTETIS",
+      "session_id": "SYNTHETIC_SYNM1_C01",
+      "session_type": "cycle",
+      "sha256": {
+        "labels.csv": "7e085ee8faed199ca698d5cb9a2dbf933189156ce7634b422c1ac8f60360e0f9",
+        "meta.json": "64515d5a9143095258461639fb12049a379ee1951b0c137b24dbeda7af6c526b",
+        "raw.csv": "1682e01b9201eb738264cbf75b5075938768a883e42e81c6af97ae1d3ea9ca54"
+      }
+    },
+    {
+      "cycle_id": "SYNM1_C02",
+      "machine_id": "SYNM1",
+      "program": "SINTETIS",
+      "session_id": "SYNTHETIC_SYNM1_C02",
+      "session_type": "cycle",
+      "sha256": {
+        "labels.csv": "c4e572758646ea91eef271158a81a924bcd1bb6bb71d4b465552ed614bd557b4",
+        "meta.json": "da8663d51077d4c0218a2ffea383b7e29ee10a57e7ab86fba82b2df6e00d409a",
+        "raw.csv": "59e82dbbd083ce6b0ea7af068e4b5bf234e3dfecbe9bf45c2d461b83a48289a4"
+      }
+    },
+    {
+      "cycle_id": "SYNM1_C03",
+      "machine_id": "SYNM1",
+      "program": "SINTETIS",
+      "session_id": "SYNTHETIC_SYNM1_C03",
+      "session_type": "cycle",
+      "sha256": {
+        "labels.csv": "58b77ffa5928eb52b881994eaaca188ce1fe823bd06bd62ca9ccddce5d757195",
+        "meta.json": "ad451724560b85c193c6b2046abd444039ba4ddfae1bf3254006bf2c768ed629",
+        "raw.csv": "6584304637fc59385d4fa8c6fefc62ace0fe5a3a43aac2dac86873fe5db96c0c"
+      }
+    },
+    {
+      "cycle_id": "SYNM1_C04",
+      "machine_id": "SYNM1",
+      "program": "SINTETIS",
+      "session_id": "SYNTHETIC_SYNM1_C04",
+      "session_type": "cycle",
+      "sha256": {
+        "labels.csv": "b373eb4c03706578a3d45a6b307d2ce9a5f75b0a098f67c50463d43323085bb3",
+        "meta.json": "2272341101275e804da5c345bdc516c2a02a5021abdedca0e02cddafa902f40d",
+        "raw.csv": "24bcd5e8b3fd35b070e01e4396d07f8fc66a0de45a155b03d0442a2f138051c7"
+      }
+    },
+    {
+      "cycle_id": "SYNM1_C05",
+      "machine_id": "SYNM1",
+      "program": "SINTETIS",
+      "session_id": "SYNTHETIC_SYNM1_C05",
+      "session_type": "cycle",
+      "sha256": {
+        "labels.csv": "d2202517dc3e2bf58a6c97d9e85dbc61499061c07a845b6c26a2cd40a3815037",
+        "meta.json": "472ac34e959ceb26e41b72fe171a7507748fb1983611f706d6629938b6f09437",
+        "raw.csv": "46ddc955d2a429110ebcc767fd6dc8eabcfb62034dab9c66e9b63a8c72aa2964"
+      }
+    },
+    {
+      "cycle_id": "SYNM1_C06",
+      "machine_id": "SYNM1",
+      "program": "SINTETIS",
+      "session_id": "SYNTHETIC_SYNM1_C06",
+      "session_type": "cycle",
+      "sha256": {
+        "labels.csv": "e80bd8374c31b34eab4fbb185c1339a48b21a0d5d6997dc91621326561626d61",
+        "meta.json": "78c11cfe8697aa2f1a959f0265cfdb38115e0bc44acdada0409232a35f60eb46",
+        "raw.csv": "e67e32beaf3532b6bc5c0e92416daeb59749daf4a72b5e7d06e5a61d1fb83cba"
+      }
+    },
+    {
+      "cycle_id": "SYNM1_C07",
+      "machine_id": "SYNM1",
+      "program": "SINTETIS",
+      "session_id": "SYNTHETIC_SYNM1_C07",
+      "session_type": "cycle",
+      "sha256": {
+        "labels.csv": "cce878f660e6b09e3c6f984f6046ad1054c133a8ff17e72e1b56c47ba8d360db",
+        "meta.json": "a59aa85964012ea1f1aee455170dc4d2d6960c4f79223cd2ab8e9de9f845ded9",
+        "raw.csv": "5cd622f8c2aaef04bc2b33996e4fca792657a8ee213c5a8b06bb9a1ee4bbbc2f"
+      }
+    },
+    {
+      "cycle_id": "SYNM1_C08",
+      "machine_id": "SYNM1",
+      "program": "SINTETIS",
+      "session_id": "SYNTHETIC_SYNM1_C08",
+      "session_type": "cycle",
+      "sha256": {
+        "labels.csv": "cbc790d2820c7dbd7868224ec6308031a495729447cbbb66d2641519c76498b4",
+        "meta.json": "771f73d4690552be7f7a95bc53e670a5790a8250544decf350f902e121d256a2",
+        "raw.csv": "169a4c8aeff3eff57a6688740e33ab846c426e3466a0ef559466cc08bbc14c17"
+      }
+    }
+  ],
+  "window": {
+    "aggregate_s": 30.0,
+    "min_coverage_s": 20.0,
+    "min_windows": 3,
+    "transition_guard_s": 10.0
+  },
+  "windows_sha256": "f05739fb2803e09ad9bfbda82fab050e7e58ef9631962838d3ce64ed3a2698ba"
+}

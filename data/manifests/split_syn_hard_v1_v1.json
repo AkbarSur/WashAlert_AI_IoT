@@ -1,0 +1,125 @@
+{
+  "cv_folds_leave_one_cycle_out": [
+    {
+      "train": [
+        "SYNM1_C02",
+        "SYNM1_C03",
+        "SYNM1_C06",
+        "SYNM1_C07",
+        "SYNM1_C08"
+      ],
+      "validation": [
+        "SYNM1_C01"
+      ]
+    },
+    {
+      "train": [
+        "SYNM1_C01",
+        "SYNM1_C03",
+        "SYNM1_C06",
+        "SYNM1_C07",
+        "SYNM1_C08"
+      ],
+      "validation": [
+        "SYNM1_C02"
+      ]
+    },
+    {
+      "train": [
+        "SYNM1_C01",
+        "SYNM1_C02",
+        "SYNM1_C06",
+        "SYNM1_C07",
+        "SYNM1_C08"
+      ],
+      "validation": [
+        "SYNM1_C03"
+      ]
+    },
+    {
+      "train": [
+        "SYNM1_C01",
+        "SYNM1_C02",
+        "SYNM1_C03",
+        "SYNM1_C07",
+        "SYNM1_C08"
+      ],
+      "validation": [
+        "SYNM1_C06"
+      ]
+    },
+    {
+      "train": [
+        "SYNM1_C01",
+        "SYNM1_C02",
+        "SYNM1_C03",
+        "SYNM1_C06",
+        "SYNM1_C08"
+      ],
+      "validation": [
+        "SYNM1_C07"
+      ]
+    },
+    {
+      "train": [
+        "SYNM1_C01",
+        "SYNM1_C02",
+        "SYNM1_C03",
+        "SYNM1_C06",
+        "SYNM1_C07"
+      ],
+      "validation": [
+        "SYNM1_C08"
+      ]
+    }
+  ],
+  "data_kind": "synthetic",
+  "dataset_id": "syn_hard_v1",
+  "evaluation_ready": false,
+  "group_rule": "cycle_id jika ada, selain itu session_id",
+  "holdout_machine": null,
+  "machines": [
+    "SYNM1"
+  ],
+  "n_windows_per_label": {
+    "test": {
+      "IDLE": 178,
+      "SPIN": 167,
+      "WASHING": 710
+    },
+    "train": {
+      "IDLE": 705,
+      "SPIN": 333,
+      "WASHING": 1420
+    },
+    "validation": {
+      "IDLE": 178,
+      "SPIN": 167,
+      "WASHING": 710
+    }
+  },
+  "rule": "Test dibuka sekali untuk evaluasi akhir. Scaler dan seleksi model hanya dari train dan validation.",
+  "seed": 42,
+  "test": [
+    "SYNM1_C04",
+    "SYNM1_C05"
+  ],
+  "train": [
+    "SYNM1_C01",
+    "SYNM1_C02",
+    "SYNM1_C03",
+    "SYNM1_C06",
+    "SYNTHETIC_IDLE_01",
+    "SYNTHETIC_IDLE_02"
+  ],
+  "validation": [
+    "SYNM1_C07",
+    "SYNM1_C08"
+  ],
+  "version": "v1",
+  "warnings": [
+    "DATA SINTETIS: split ini hanya menguji perangkat lunak dan tidak boleh dipakai untuk klaim performa",
+    "Hanya satu mesin. Klaim generalisasi antar-mesin tidak boleh dibuat"
+  ],
+  "windows_sha256": "f05739fb2803e09ad9bfbda82fab050e7e58ef9631962838d3ce64ed3a2698ba"
+}

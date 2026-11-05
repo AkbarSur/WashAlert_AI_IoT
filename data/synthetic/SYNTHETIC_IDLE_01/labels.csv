@@ -1,0 +1,2 @@
+session_id,start_ms,end_ms,label,phase_note,observer,method
+SYNTHETIC_IDLE_01,1790057600000,1790058200357,IDLE,,GEN,direct

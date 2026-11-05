@@ -1,0 +1,262 @@
+{
+  "algorithm": "decision_tree",
+  "classes": [
+    "IDLE",
+    "SPIN",
+    "WASHING"
+  ],
+  "data_kind": "synthetic",
+  "dataset_id": "syn_hard_v1",
+  "dataset_manifest_hash": "216cf41a555353b1eb882d79156541bb4d5c4e2f32f79f90fdfdd67a22425260",
+  "dataset_type": "SYNTHETIC",
+  "experiment_id": "exp_20261104T141944_624d6645",
+  "feature_names": [
+    "acc_dyn_rms_mean",
+    "acc_dyn_rms_std",
+    "acc_dyn_rms_max",
+    "acc_mag_ptp_mean",
+    "acc_mag_ptp_std",
+    "acc_mag_ptp_max",
+    "gyro_rms_mean",
+    "gyro_rms_std",
+    "gyro_rms_max",
+    "gyro_max_mean",
+    "gyro_max_std",
+    "gyro_max_max"
+  ],
+  "feature_ranges": {
+    "acc_dyn_rms_max": {
+      "high": 8.367089,
+      "low": -2.534179
+    },
+    "acc_dyn_rms_mean": {
+      "high": 5.941692,
+      "low": -1.777528
+    },
+    "acc_dyn_rms_std": {
+      "high": 1.989045,
+      "low": -0.643103
+    },
+    "acc_mag_ptp_max": {
+      "high": 11.2485225,
+      "low": -3.3698034999999997
+    },
+    "acc_mag_ptp_mean": {
+      "high": 7.4009825,
+      "low": -2.2126035
+    },
+    "acc_mag_ptp_std": {
+      "high": 3.2155604999999996,
+      "low": -1.0256655
+    },
+    "gyro_max_max": {
+      "high": 1.151011,
+      "low": -0.351909
+    },
+    "gyro_max_mean": {
+      "high": 1.108628,
+      "low": -0.34343199999999996
+    },
+    "gyro_max_std": {
+      "high": 0.1362915,
+      "low": -0.042750500000000004
+    },
+    "gyro_rms_max": {
+      "high": 1.007332,
+      "low": -0.312736
+    },
+    "gyro_rms_mean": {
+      "high": 0.854009,
+      "low": -0.265019
+    },
+    "gyro_rms_std": {
+      "high": 0.1751975,
+      "low": -0.0570565
+    }
+  },
+  "feature_schema_version": 1,
+  "feature_set": "F2",
+  "hyperparameters": {
+    "max_depth": 8,
+    "min_samples_leaf": 1
+  },
+  "label_mapping": {
+    "IDLE": 0,
+    "SPIN": 1,
+    "WASHING": 2
+  },
+  "majority_class": "WASHING",
+  "model_name": "washalert_activity",
+  "model_version": "syn_hard_v1-v1-decision_tree-F2-624d6645",
+  "n_dev_windows": 3513,
+  "n_validated_windows": 3163,
+  "probability_calibrated": false,
+  "probability_threshold": 0.0,
+  "production_allowed": false,
+  "seed": 42,
+  "sha256": "be4d6a3743eae79d9fe3d6c8f0293b64e543cb9eebf3637c0ebb50d7c1d51c00",
+  "smoothing_n": 5,
+  "split_file": "data/manifests/split_syn_hard_v1_v1.json",
+  "split_strategy": "cycle_id jika ada, selain itu session_id; validasi leave-one-cycle-out",
+  "split_version": "v1",
+  "status_claims": {
+    "A_pipeline_implemented": true,
+    "B_tested_with_synthetic": true,
+    "C_trained_on_real": false,
+    "D_validated_on_heldout_real": false,
+    "E_ready_for_production": false
+  },
+  "test_results": {
+    "evaluated_at": "2026-11-04T14:19:48.624614+00:00",
+    "selected_model": {
+      "accuracy": 0.9374407582938389,
+      "active_predicted_idle_rate": 0.0,
+      "balanced_accuracy": 0.9213061138365775,
+      "confusion_matrix": {
+        "labels": [
+          "IDLE",
+          "SPIN",
+          "WASHING"
+        ],
+        "rows_true_cols_pred": [
+          [
+            144,
+            0,
+            34
+          ],
+          [
+            0,
+            167,
+            0
+          ],
+          [
+            0,
+            32,
+            678
+          ]
+        ]
+      },
+      "macro_f1": 0.9201882472631411,
+      "macro_precision": 0.9304810569702445,
+      "macro_recall": 0.9213061138365775,
+      "n": 1055,
+      "per_class": {
+        "IDLE": {
+          "f1": 0.8944099378881988,
+          "precision": 1.0,
+          "recall": 0.8089887640449438,
+          "support": 178
+        },
+        "SPIN": {
+          "f1": 0.912568306010929,
+          "precision": 0.8391959798994975,
+          "recall": 1.0,
+          "support": 167
+        },
+        "WASHING": {
+          "f1": 0.9535864978902954,
+          "precision": 0.952247191011236,
+          "recall": 0.9549295774647887,
+          "support": 710
+        }
+      },
+      "weighted_f1": 0.9371092791943452
+    }
+  },
+  "train_groups": [
+    "SYNM1_C01",
+    "SYNM1_C02",
+    "SYNM1_C03",
+    "SYNM1_C06",
+    "SYNTHETIC_IDLE_01",
+    "SYNTHETIC_IDLE_02"
+  ],
+  "training_timestamp": "2026-11-04T14:19:44.247071+00:00",
+  "validation_groups": [
+    "SYNM1_C07",
+    "SYNM1_C08"
+  ],
+  "validation_results": {
+    "cv_macro_f1_mean": 0.8481602228945437,
+    "cv_macro_f1_per_fold": [
+      0.9100400457665904,
+      0.66950552501527,
+      0.9569872206753766,
+      0.9139843784475531,
+      0.9060633213859021,
+      0.7323808460765711
+    ],
+    "oof_metrics": {
+      "accuracy": 0.8438191590262409,
+      "active_predicted_idle_rate": 0.13650190114068442,
+      "balanced_accuracy": 0.859390698999081,
+      "confusion_matrix": {
+        "labels": [
+          "IDLE",
+          "SPIN",
+          "WASHING"
+        ],
+        "rows_true_cols_pred": [
+          [
+            398,
+            0,
+            135
+          ],
+          [
+            0,
+            500,
+            0
+          ],
+          [
+            359,
+            0,
+            1771
+          ]
+        ]
+      },
+      "macro_f1": 0.8315519497647784,
+      "macro_precision": 0.8183102053678319,
+      "macro_recall": 0.859390698999081,
+      "n": 3163,
+      "per_class": {
+        "IDLE": {
+          "f1": 0.6170542635658914,
+          "precision": 0.5257595772787318,
+          "recall": 0.7467166979362101,
+          "support": 533
+        },
+        "SPIN": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 500
+        },
+        "WASHING": {
+          "f1": 0.877601585728444,
+          "precision": 0.9291710388247639,
+          "recall": 0.8314553990610328,
+          "support": 2130
+        }
+      },
+      "weighted_f1": 0.8530449889605456
+    }
+  },
+  "versions": {
+    "joblib": "1.6.0",
+    "numpy": "2.5.3",
+    "python": "3.13.18",
+    "scikit_learn": "1.9.1"
+  },
+  "warnings": [
+    "MODEL SINTETIS. Bukan bukti performa pada mesin cuci.",
+    "DATA SINTETIS: split ini hanya menguji perangkat lunak dan tidak boleh dipakai untuk klaim performa",
+    "Hanya satu mesin. Klaim generalisasi antar-mesin tidak boleh dibuat"
+  ],
+  "window": {
+    "aggregate_s": 30.0,
+    "min_coverage_s": 20.0,
+    "min_windows": 3,
+    "transition_guard_s": 10.0
+  },
+  "windows_sha256": "f05739fb2803e09ad9bfbda82fab050e7e58ef9631962838d3ce64ed3a2698ba"
+}
