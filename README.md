@@ -295,15 +295,3 @@ Indeks lengkap: [docs/README.md](docs/README.md). Yang utama: [Laporan teknis](d
 ## 25. Referensi akademik
 
 Lihat daftar pustaka pada [laporan teknis](docs/laporan_teknis_WashAlert_AI.md#daftar-pustaka).
-
-## 26. Tim
-
-Kelompok 12, mata kuliah Internet of Things.
-
-| Nama | NIM | Peran |
-|---|---|---|
-| [isi nama] | [isi NIM] | [isi peran] |
-
-## 27. Lisensi
-
-File `LICENSE` berisi lisensi MIT dengan pemegang hak "PocketGuard IoT contributors", yang terbawa dari proyek asal. Pemilik proyek perlu memeriksa dan memutuskannya sebelum repository dipublikasikan.
