@@ -1,0 +1,11 @@
+# Broker lokal untuk demo tanpa internet. Tanpa TLS dan tanpa akun: pakai hanya di jaringan sendiri.
+listeners:
+  default:
+    type: tcp
+    bind: 0.0.0.0:1883
+  ws:
+    type: ws
+    bind: 0.0.0.0:9001
+plugins:
+  amqtt.plugins.authentication.AnonymousAuthPlugin:
+    allow_anonymous: true
