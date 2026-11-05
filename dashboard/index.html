@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; connect-src 'self' ws: wss:; worker-src blob:; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+<title>WashAlert Dashboard</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body>
+<a class="skip" href="#main">Lompat ke isi</a>
+<header class="top">
+  <div class="brand">
+    <svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="16" cy="16" r="7" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="4 3"/></svg>
+    <div>
+      <h1>WashAlert AI</h1>
+      <p>Pemantauan mesin cuci, proyek <span id="project">belum diketahui</span></p>
+    </div>
+  </div>
+  <dl class="topmeta">
+    <div><dt>Broker MQTT</dt><dd id="conn" data-tone="neutral">Memuat konfigurasi</dd></div>
+    <div><dt>Mode deteksi</dt><dd id="mode-chip">Belum diketahui</dd></div>
+    <div><dt>Update terakhir</dt><dd id="last-update">Belum ada</dd></div>
+    <div><dt>Jam browser</dt><dd id="clock">--:--:--</dd></div>
+  </dl>
+</header>
+
+<div id="banners" class="banners" role="region" aria-label="Peringatan sistem"></div>
+
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <h2 id="hero-title" class="sr">Status mesin cuci</h2>
+    <div class="door-col">
+      <div id="door" class="door" data-status="LOADING" data-fresh="wait">
+        <svg viewBox="0 0 200 200" aria-hidden="true">
+          <circle class="rim" cx="100" cy="100" r="92"/>
+          <circle class="drum" cx="100" cy="100" r="74"/>
+        </svg>
+        <div class="door-text">
+          <span class="door-label">Status siklus</span>
+          <strong id="status" role="status">Memuat</strong>
+          <span id="door-note" class="door-note">Menunggu detector</span>
+        </div>
+      </div>
+      <ol class="steps" aria-label="Tahap siklus">
+        <li data-s="IDLE">IDLE</li><li data-s="WASHING">WASHING</li><li data-s="SPIN">SPIN</li><li data-s="DONE">DONE</li>
+      </ol>
+    </div>
+
+    <div class="hero-body">
+      <p id="reason" class="reason">Belum ada laporan dari detector.</p>
+      <dl class="facts">
+        <div><dt>Aktivitas mesin</dt><dd id="activity">Belum ada data</dd><dd class="sub" id="activity-sub">Hasil pengolahan sensor saat ini</dd></div>
+        <div><dt>Prediksi AI</dt><dd id="prediction">Belum ada prediksi</dd><dd class="sub" id="prediction-sub"></dd></div>
+        <div><dt>Lama siklus</dt><dd id="minutes">Belum ada siklus</dd><dd class="sub" id="avg"></dd></div>
+        <div><dt>Perangkat</dt><dd class="devices"><span id="dev-edge1">HP A: belum ada data</span><span id="dev-edge2">HP B: belum ada data</span><span id="dev-detector">Detector: belum melapor</span></dd></div>
+        <div><dt>Alert</dt><dd id="alert-state">Tidak ada alert aktif</dd><dd class="sub" id="alert-sub"></dd></div>
+        <div class="control"><dt>Pemantauan</dt><dd id="armed">Belum diketahui</dd>
+          <dd class="buttons">
+            <button id="btn-arm" type="button">ARM</button>
+            <button id="btn-disarm" type="button">DISARM</button>
+            <span id="disarm-confirm" hidden>
+              <button id="btn-disarm-yes" type="button" class="danger">Jeda dan reset siklus</button>
+              <button id="btn-disarm-no" type="button">Batal</button>
+            </span>
+          </dd>
+          <dd class="sub" id="cmd-feedback" role="status"></dd>
+        </div>
+      </dl>
+      <p class="explain">Aktivitas adalah apa yang terbaca dari sensor saat ini. Status siklus adalah keputusan FSM. IDLE berarti mesin sedang diam. DONE berarti satu siklus sudah dinyatakan selesai.</p>
+    </div>
+  </section>
+
+  <form id="login" class="panel login" hidden>
+    <h2>Masuk ke broker</h2>
+    <p>Broker ini memakai akun. Isian hanya disimpan di memori tab ini. Pakai akun dengan hak terbatas.</p>
+    <label>Username <input id="login-user" autocomplete="username" required></label>
+    <label>Password <input id="login-pass" type="password" autocomplete="current-password" required></label>
+    <button type="submit">Sambungkan</button>
+  </form>
+
+  <section class="panel" aria-labelledby="strip-title">
+    <div class="panel-head">
+      <h2 id="strip-title">Linimasa siklus</h2>
+      <label class="range">Rentang <select id="range"><option value="2">2 menit</option><option value="5" selected>5 menit</option><option value="15">15 menit</option></select></label>
+    </div>
+    <div id="strip" class="strip" data-empty="true">
+      <p class="empty" id="strip-empty">Menunggu laporan pertama dari detector.</p>
+    </div>
+    <div class="strip-axis" aria-hidden="true"><span id="strip-from"></span><span>sekarang</span></div>
+    <p class="path"><span class="k">Urutan tercatat:</span> <span id="path">Belum ada transisi</span></p>
+  </section>
+
+  <div class="columns">
+    <div class="col">
+      <section class="panel" aria-labelledby="chart-title">
+        <div class="panel-head"><h2 id="chart-title">Sensor real-time</h2><span id="sensor-badge" class="badge" data-tone="neutral">Menunggu data sensor</span></div>
+        <figure class="chart">
+          <figcaption>Getaran, RMS percepatan per jendela (m/s²)</figcaption>
+          <div class="canvas-wrap"><canvas id="chart-rms" tabindex="0" role="img" aria-label="Grafik getaran, belum ada data"></canvas><div id="tip-rms" class="tip" hidden></div><p class="empty over" id="empty-rms">Menunggu data sensor.</p></div>
+        </figure>
+        <figure class="chart">
+          <figcaption>Rotasi dari giroskop per jendela (rad)</figcaption>
+          <div class="canvas-wrap"><canvas id="chart-rot" tabindex="0" role="img" aria-label="Grafik rotasi, belum ada data"></canvas><div id="tip-rot" class="tip" hidden></div><p class="empty over" id="empty-rot">Menunggu data sensor.</p></div>
+        </figure>
+        <p class="legend"><span><i class="line a"></i>HP A, mesin (garis penuh)</span><span><i class="line b"></i>HP B, pemilik (garis putus)</span><span><i class="gapkey"></i>Data hilang, garis sengaja diputus</span></p>
+      </section>
+      <section class="panel" aria-labelledby="q-title">
+        <div class="panel-head"><h2 id="q-title">Kualitas data HP A</h2><span id="q-badge" class="badge" data-tone="neutral">Menunggu data</span></div>
+        <dl class="rows">
+          <div><dt>Waktu sensor</dt><dd id="q-time">Tidak tersedia</dd></div>
+          <div><dt>Selisih jam HP dan browser</dt><dd id="q-skew">Tidak tersedia</dd></div>
+          <div><dt>Laju sampling nyata</dt><dd id="q-hz">Tidak tersedia</dd></div>
+          <div><dt>Sampel per jendela</dt><dd id="q-n">Tidak tersedia</dd></div>
+          <div><dt>Sampel basi</dt><dd id="q-stale">Tidak tersedia</dd></div>
+          <div><dt>Sensor</dt><dd id="q-fault">Tidak tersedia</dd></div>
+          <div><dt>Sumber data</dt><dd id="q-source">Tidak tersedia</dd></div>
+          <div><dt>Ditolak detector</dt><dd id="q-rej-det">Tidak tersedia</dd></div>
+          <div><dt>Diabaikan browser</dt><dd id="q-rej-br">0</dd></div>
+        </dl>
+      </section>
+    </div>
+    <div class="col">
+      <section class="panel" aria-labelledby="ai-title">
+        <div class="panel-head"><h2 id="ai-title">Pemantauan AI</h2><span id="model-badge" class="badge" data-tone="neutral">Belum diketahui</span></div>
+        <dl class="rows">
+          <div><dt>Mode diminta</dt><dd id="ai-mode">Belum diketahui</dd></div>
+          <div><dt>Mode efektif</dt><dd id="effective-mode">Belum diketahui</dd></div>
+          <div><dt>Aktivitas dipakai FSM</dt><dd id="ai-activity">Belum ada prediksi</dd></div>
+          <div><dt>Sumber aktivitas</dt><dd id="ai-source">Belum diketahui</dd></div>
+          <div><dt>Probabilitas prediksi</dt><dd id="ai-prob">Tidak tersedia</dd></div>
+          <div><dt>Prediksi terakhir</dt><dd id="ai-time">Tidak tersedia</dd></div>
+          <div><dt>Latensi inference</dt><dd id="ai-latency">Tidak tersedia</dd></div>
+          <div><dt>Nama model</dt><dd id="ai-name">Model tidak dimuat</dd></div>
+          <div><dt>Versi model</dt><dd id="ai-version" class="wrap">Tidak tersedia</dd></div>
+          <div><dt>Data latih</dt><dd id="ai-kind">Tidak tersedia</dd></div>
+          <div><dt>Fallback</dt><dd id="ai-fallback">Tidak ada</dd></div>
+        </dl>
+        <p class="note">Model hanya menebak aktivitas. Keputusan DONE, alert, dan konfirmasi selalu dibuat FSM. Dashboard tidak menampilkan akurasi model.</p>
+      </section>
+      <section class="panel" aria-labelledby="alerts-title">
+        <div class="panel-head"><h2 id="alerts-title">Notifikasi</h2><span class="hint">Riwayat sejak halaman dibuka</span></div>
+        <div id="alert-active" class="alert-active" hidden></div>
+        <ol id="alerts" class="alerts"><li class="empty">Belum ada alert.</li></ol>
+        <p class="note" id="dup-note"></p>
+      </section>
+      <section class="panel" aria-labelledby="events-title">
+        <div class="panel-head"><h2 id="events-title">Riwayat kejadian</h2><span class="hint">Sejak halaman dibuka, tidak disimpan</span></div>
+        <ol id="events" class="events"><li class="empty">Belum ada kejadian.</li></ol>
+      </section>
+    </div>
+  </div>
+  <footer class="foot" id="foot"></footer>
+</main>
+<script src="assets/vendor/mqtt.min.js"></script>
+<script src="assets/js/store.js"></script>
+<script src="assets/js/charts.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
