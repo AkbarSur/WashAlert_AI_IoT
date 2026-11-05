@@ -1,0 +1,287 @@
+{
+  "evidence_class": "SIMULATION",
+  "note": "Broker lokal dan telemetri sintetis. Bukan hardware validation.",
+  "passed": 43,
+  "total": 43,
+  "results": [
+    {
+      "scenario": "MODE",
+      "check": "HYBRID aktif dengan model sintetis berlabel",
+      "pass": true,
+      "evidence": "HYBRID / syn_hard_v1-v1-decision_tree-F2-624d6645"
+    },
+    {
+      "scenario": "A",
+      "check": "Mesin IDLE",
+      "pass": true,
+      "evidence": "IDLE"
+    },
+    {
+      "scenario": "A",
+      "check": "Dashboard: #status memuat IDLE",
+      "pass": true,
+      "evidence": "IDLE"
+    },
+    {
+      "scenario": "A",
+      "check": "Dashboard: #banners memuat MODEL PENGEMBANGAN",
+      "pass": true,
+      "evidence": "MODEL PENGEMBANGAN (SINTETIS)Model ini dilatih dari data sintetis dan belum diva"
+    },
+    {
+      "scenario": "A",
+      "check": "Dashboard: #banners memuat MODE SIMULASI",
+      "pass": true,
+      "evidence": "MODEL PENGEMBANGAN (SINTETIS)Model ini dilatih dari data sintetis dan belum diva"
+    },
+    {
+      "scenario": "B",
+      "check": "Mesin WASHING",
+      "pass": true,
+      "evidence": "Counter({'SPIN': 24, 'IDLE': 6, 'WASHING': 5})"
+    },
+    {
+      "scenario": "B",
+      "check": "Prediksi model benar-benar memengaruhi aktivitas",
+      "pass": true,
+      "evidence": "Counter({'model': 26, 'rule_fallback': 9})"
+    },
+    {
+      "scenario": "B",
+      "check": "Dashboard: #status memuat SPIN",
+      "pass": true,
+      "evidence": "SPIN"
+    },
+    {
+      "scenario": "B",
+      "check": "Dashboard: grafik sensor berubah",
+      "pass": true,
+      "evidence": ""
+    },
+    {
+      "scenario": "C",
+      "check": "Mesin SPIN",
+      "pass": true,
+      "evidence": "Counter({'SPIN': 26, 'WASHING': 4})"
+    },
+    {
+      "scenario": "C",
+      "check": "Model mengidentifikasi SPIN",
+      "pass": true,
+      "evidence": ""
+    },
+    {
+      "scenario": "C",
+      "check": "Dashboard: #ai-activity memuat SPIN",
+      "pass": true,
+      "evidence": "SPIN"
+    },
+    {
+      "scenario": "C",
+      "check": "Dashboard: #path memuat SPIN",
+      "pass": true,
+      "evidence": "IDLE → WASHING → SPIN → WASHING → SPIN"
+    },
+    {
+      "scenario": "D",
+      "check": "Berhenti sementara tidak memicu DONE",
+      "pass": true,
+      "evidence": "WASHING"
+    },
+    {
+      "scenario": "D",
+      "check": "Dashboard: belum menampilkan DONE saat jeda",
+      "pass": true,
+      "evidence": "WASHING"
+    },
+    {
+      "scenario": "E",
+      "check": "Selesai dan alert terkirim",
+      "pass": true,
+      "evidence": "completed_after_spin"
+    },
+    {
+      "scenario": "E",
+      "check": "HP B (proses nyata, sensor simulator) menjalankan alarm",
+      "pass": true,
+      "evidence": ""
+    },
+    {
+      "scenario": "E",
+      "check": "Dashboard: #status memuat DONE",
+      "pass": true,
+      "evidence": "DONE"
+    },
+    {
+      "scenario": "E",
+      "check": "Dashboard: #alert-state memuat menunggu konfirmasi",
+      "pass": true,
+      "evidence": "Cucian selesai, menunggu konfirmasi"
+    },
+    {
+      "scenario": "E",
+      "check": "Tidak ada alert duplikat",
+      "pass": true,
+      "evidence": "1"
+    },
+    {
+      "scenario": "F",
+      "check": "Goyangan HP B mengembalikan IDLE",
+      "pass": true,
+      "evidence": "Pemilik konfirmasi cucian diambil (siklus 3.56 menit)"
+    },
+    {
+      "scenario": "F",
+      "check": "alert_state bersih dan notifikasi dihapus",
+      "pass": true,
+      "evidence": ""
+    },
+    {
+      "scenario": "F",
+      "check": "Dashboard: #alerts memuat Dikonfirmasi pemilik",
+      "pass": true,
+      "evidence": "Cucian selesaiDikonfirmasi pemilik04:01:32, berakhir 04:01:39Mesin berhenti berg"
+    },
+    {
+      "scenario": "I",
+      "check": "Siklus kedua dimulai",
+      "pass": true,
+      "evidence": "WASHING"
+    },
+    {
+      "scenario": "H",
+      "check": "Dashboard: #conn memuat Terputus",
+      "pass": true,
+      "evidence": "Terputus, mencoba lagi"
+    },
+    {
+      "scenario": "H",
+      "check": "Dashboard: #door-note memuat Broker terputus",
+      "pass": true,
+      "evidence": "Data terakhir 04:02:05. Broker terputus"
+    },
+    {
+      "scenario": "H",
+      "check": "Dashboard: #conn memuat Tersambung",
+      "pass": true,
+      "evidence": "Tersambung"
+    },
+    {
+      "scenario": "H",
+      "check": "State siklus bertahan setelah broker restart",
+      "pass": true,
+      "evidence": "WASHING"
+    },
+    {
+      "scenario": "I",
+      "check": "Siklus kedua menghasilkan alert baru",
+      "pass": true,
+      "evidence": "2"
+    },
+    {
+      "scenario": "J",
+      "check": "Dashboard melayani konfigurasi tanpa kredensial",
+      "pass": true,
+      "evidence": "['project_id', 'websocket_url', 'automatic_connection', 'stale_after_s', 'offline_after_s']"
+    },
+    {
+      "scenario": "J",
+      "check": "Dashboard: #effective-mode memuat HYBRID",
+      "pass": true,
+      "evidence": "HYBRID"
+    },
+    {
+      "scenario": "J",
+      "check": "Dashboard tanpa galat JavaScript",
+      "pass": true,
+      "evidence": "[]"
+    },
+    {
+      "scenario": "G",
+      "check": "Model rusak ditolak dan fallback terlihat",
+      "pass": true,
+      "evidence": "model_hash_mismatch"
+    },
+    {
+      "scenario": "G",
+      "check": "Fallback tidak memicu DONE saat mesin aktif",
+      "pass": true,
+      "evidence": "SPIN"
+    },
+    {
+      "scenario": "G",
+      "check": "Siklus penuh tetap berjalan dengan aturan",
+      "pass": true,
+      "evidence": ""
+    },
+    {
+      "scenario": "J",
+      "check": "Dashboard: #effective-mode memuat RULE_ONLY",
+      "pass": true,
+      "evidence": "RULE_ONLY"
+    },
+    {
+      "scenario": "J",
+      "check": "Dashboard tanpa galat JavaScript",
+      "pass": true,
+      "evidence": "[]"
+    },
+    {
+      "scenario": "G",
+      "check": "Dashboard: #banners memuat Model tidak dipakai",
+      "pass": true,
+      "evidence": "Model tidak dipakaiSistem memakai aturan ambang. Alasan: file model berubah atau"
+    },
+    {
+      "scenario": "G",
+      "check": "Dashboard: #ai-fallback memuat file model berubah atau rusak",
+      "pass": true,
+      "evidence": "Aktif: file model berubah atau rusak"
+    },
+    {
+      "scenario": "J",
+      "check": "Dashboard: #cmd-feedback memuat Detector mengonfirmasi DISARM",
+      "pass": true,
+      "evidence": "Detector mengonfirmasi DISARM pada 04:05:30."
+    },
+    {
+      "scenario": "J",
+      "check": "Dashboard: #status memuat DISARMED",
+      "pass": true,
+      "evidence": "DISARMED"
+    },
+    {
+      "scenario": "J",
+      "check": "Dashboard: #cmd-feedback memuat Detector mengonfirmasi ARM",
+      "pass": true,
+      "evidence": "Detector mengonfirmasi ARM pada 04:05:31."
+    },
+    {
+      "scenario": "J",
+      "check": "Lebar ponsel 360 piksel tanpa scroll horizontal (emulasi)",
+      "pass": true,
+      "evidence": "[360, 360]"
+    }
+  ],
+  "metrics": {
+    "inference_latency_ms": {
+      "n": 422,
+      "median": 0.5605,
+      "max": 4.329
+    },
+    "telemetry_to_status_ms_local_broker": {
+      "n": 436,
+      "median": 4.2,
+      "p95": 6.4
+    },
+    "alert_publish_to_receive_ms_local_broker": [
+      3.1,
+      4.7
+    ],
+    "detector_cpu_percent_one_core": 0.5,
+    "detector_peak_rss_mb": 155.9,
+    "seconds_observed": 453,
+    "completion_alerts": 2,
+    "cycles_fed": 2
+  }
+}

@@ -1,0 +1,25 @@
+flowchart LR
+  E1["Mesin cuci"] -->|getaran| P1(("P1 Baca sensor"))
+  P1 -->|SensorSample + tanda fresh| P2(("P2 Fitur jendela edge"))
+  P1 -->|sampel mentah| S1[("S1 raw.csv")]
+  E2["Operator"] -->|metadata, interval label| S2[("S2 meta.json, labels.csv")]
+  S1 --> P7(("P7 Validasi dan bangun dataset"))
+  S2 --> P7
+  P7 -->|windows.csv, manifest| S3[("S3 data/processed")]
+  S3 --> P8(("P8 Training"))
+  P8 --> S4[("S4 models")]
+  S1 --> P9(("P9 Replay dan evaluasi"))
+  S2 --> P9
+  S4 --> P9
+  P9 --> S5[("S5 reports")]
+  P2 -->|telemetry| P3(("P3 Validasi pesan"))
+  E3["HP B"] -->|telemetry goyang| P3
+  P3 -->|Telemetry valid| P4(("P4 Agregasi dan aktivitas"))
+  S4 -->|model tervalidasi| P4
+  P4 -->|ActivityEstimate| P5(("P5 FSM siklus"))
+  P3 -->|goyangan edge2| P5
+  P5 -->|alerts, alert_state| E3
+  P5 -->|status| P6(("P6 Dashboard"))
+  P3 -->|telemetry untuk grafik| P6
+  E4["Pemilik"] -->|ARM / DISARM| P6
+  P6 -->|control| P5

@@ -1,0 +1,26 @@
+flowchart TB
+  subgraph EDGE["HP A / edge1: Python ringan, tanpa scikit-learn"]
+    S["Accelerometer + gyroscope<br/>Termux:API"] --> Q["Cek kualitas<br/>laju nyata, sampel basi, gagal sensor"]
+    Q --> F["Fitur v1 tetap<br/>Fitur v2 tambahan"]
+  end
+  F -->|"telemetry v2 kompatibel"| M[("Broker MQTT")]
+  B["HP B / edge2<br/>alarm + goyang"] -->|telemetry| M
+  M --> V
+  subgraph DET["Laptop / detector"]
+    V["Validasi skema, topik, stale, replay"] --> AGG["Jendela agregat"]
+    AGG --> DEC{"Model dan fitur valid,<br/>probabilitas cukup?"}
+    DEC -->|ya| ML["DIPELAJARI<br/>classifier aktivitas"]
+    DEC -->|tidak| RULE["ATURAN<br/>ambang lama, alasan tampil"]
+    ML --> SM["Smoothing"]
+    RULE --> SM
+    SM --> FSM["ATURAN<br/>FSM siklus: DONE, alert,<br/>pengingat, konfirmasi"]
+    WD["Watchdog HP A"] --> FSM
+  end
+  FSM -->|"alerts, alert_state, status"| M
+  M -->|"alerts, alert_state"| B
+  M -->|"status, telemetry"| W["Dashboard"]
+  W -->|"ARM / DISARM"| M
+  subgraph OFF["Offline di laptop"]
+    TR["Dataset tervalidasi<br/>training dan evaluasi"] --> ART["Model + metadata"]
+  end
+  ART -.->|dimuat saat start| DEC

@@ -1,0 +1,38 @@
+[EVENT] {"detection_mode": "HYBRID", "effective_mode": "HYBRID", "event": "startup", "model_data_kind": "synthetic", "model_name": "washalert_activity", "model_status": "active", "model_version": "syn_hard_v1-v1-decision_tree-F2-624d6645", "probability_calibrated": false, "t_ms": 1793851051610}
+[EVENT] {"activity": "IDLE", "event": "state", "source": "rule_fallback", "source_reason": "incomplete_window", "status": "IDLE", "t_ms": 1793851052419}
+[EVENT] {"activity": "WASHING", "event": "state", "source": "rule_fallback", "source_reason": "incomplete_window", "status": "WASHING", "t_ms": 1793851067362}
+[EVENT] {"activity": "WASHING", "event": "state", "source": "model", "source_reason": null, "status": "WASHING", "t_ms": 1793851070365}
+[EVENT] {"activity": "SPIN", "event": "state", "source": "model", "source_reason": null, "status": "SPIN", "t_ms": 1793851072367}
+[EVENT] {"activity": "WASHING", "event": "state", "source": "model", "source_reason": null, "status": "WASHING", "t_ms": 1793851099301}
+[EVENT] {"activity": "WASHING", "event": "state", "source": "rule_fallback", "source_reason": "out_of_training_range", "status": "WASHING", "t_ms": 1793851102513}
+[EVENT] {"activity": "SPIN", "event": "state", "source": "rule_fallback", "source_reason": "out_of_training_range", "status": "SPIN", "t_ms": 1793851105514}
+[EVENT] {"activity": "SPIN", "event": "state", "source": "model", "source_reason": null, "status": "SPIN", "t_ms": 1793851128525}
+[EVENT] {"activity": "SPIN", "event": "state", "source": "rule_fallback", "source_reason": "out_of_training_range", "status": "SPIN", "t_ms": 1793851132473}
+[EVENT] {"activity": "WASHING", "event": "state", "source": "rule_fallback", "source_reason": "out_of_training_range", "status": "WASHING", "t_ms": 1793851134474}
+[EVENT] {"activity": "WASHING", "event": "state", "source": "model", "source_reason": null, "status": "WASHING", "t_ms": 1793851161487}
+[EVENT] {"activity": "SPIN", "event": "state", "source": "model", "source_reason": null, "status": "SPIN", "t_ms": 1793851227799}
+[EVENT] {"activity": "IDLE", "event": "state", "source": "model", "source_reason": null, "status": "DONE", "t_ms": 1793851292831}
+[EVENT] {"alert_id": "72bc2408ee5d45c894b3dee196c2c227", "event": "alert", "is_reminder": false, "kind": "completed_after_spin", "t_ms": 1793851292832}
+[EVENT] {"activity": null, "event": "state", "source": null, "source_reason": null, "status": "IDLE", "t_ms": 1793851299858}
+[EVENT] {"activity": "IDLE", "event": "state", "source": "rule_fallback", "source_reason": "incomplete_window", "status": "IDLE", "t_ms": 1793851301365}
+[EVENT] {"activity": "WASHING", "event": "state", "source": "rule_fallback", "source_reason": "incomplete_window", "status": "WASHING", "t_ms": 1793851305366}
+[EVENT] {"activity": "WASHING", "event": "state", "source": "model", "source_reason": null, "status": "WASHING", "t_ms": 1793851319374}
+[EVENT] {"activity": "WASHING", "event": "state", "source": "rule_fallback", "source_reason": "out_of_training_range", "status": "WASHING", "t_ms": 1793851340570}
+[EVENT] {"activity": "SPIN", "event": "state", "source": "rule_fallback", "source_reason": "out_of_training_range", "status": "SPIN", "t_ms": 1793851341571}
+[EVENT] {"activity": "WASHING", "event": "state", "source": "rule_fallback", "source_reason": "out_of_training_range", "status": "WASHING", "t_ms": 1793851344573}
+[EVENT] {"activity": "SPIN", "event": "state", "source": "rule_fallback", "source_reason": "out_of_training_range", "status": "SPIN", "t_ms": 1793851345575}
+[EVENT] {"activity": "WASHING", "event": "state", "source": "rule_fallback", "source_reason": "out_of_training_range", "status": "WASHING", "t_ms": 1793851362583}
+[EVENT] {"activity": "WASHING", "event": "state", "source": "model", "source_reason": null, "status": "WASHING", "t_ms": 1793851383595}
+[EVENT] {"activity": "SPIN", "event": "state", "source": "model", "source_reason": null, "status": "SPIN", "t_ms": 1793851436623}
+[EVENT] {"activity": "IDLE", "event": "state", "source": "model", "source_reason": null, "status": "DONE", "t_ms": 1793851501661}
+[EVENT] {"alert_id": "46181be35c614b83bfc3e6060439da6a", "event": "alert", "is_reminder": false, "kind": "completed_after_spin", "t_ms": 1793851501661}
+[EVENT] {"activity": null, "event": "state", "source": null, "source_reason": null, "status": "IDLE", "t_ms": 1793851502711}
+[EVENT] {"detection_mode": "HYBRID", "effective_mode": "RULE_ONLY", "event": "startup", "fallback_reason": "model_hash_mismatch", "model_status": "unavailable", "t_ms": 1793851503414}
+[EVENT] {"activity": "IDLE", "event": "state", "source": "rule", "source_reason": null, "status": "IDLE", "t_ms": 1793851503529}
+[EVENT] {"activity": "WASHING", "event": "state", "source": "rule", "source_reason": null, "status": "WASHING", "t_ms": 1793851507531}
+[EVENT] {"activity": "SPIN", "event": "state", "source": "rule", "source_reason": null, "status": "SPIN", "t_ms": 1793851508532}
+[EVENT] {"activity": "WASHING", "event": "state", "source": "rule", "source_reason": null, "status": "WASHING", "t_ms": 1793851512536}
+[EVENT] {"activity": "IDLE", "event": "state", "source": "rule", "source_reason": null, "status": "DONE", "t_ms": 1793851528542}
+[EVENT] {"alert_id": "daa0c52f472d486dbfe3f8843a40f8a3", "event": "alert", "is_reminder": false, "kind": "completed_after_spin", "t_ms": 1793851528543}
+[EVENT] {"activity": null, "event": "state", "source": null, "source_reason": null, "status": "DISARMED", "t_ms": 1793851531449}
+[EVENT] {"activity": "IDLE", "event": "state", "source": "rule", "source_reason": null, "status": "IDLE", "t_ms": 1793851534689}

@@ -1,0 +1,29 @@
+sequenceDiagram
+  participant A as HP A
+  participant M as Broker MQTT
+  participant D as Detector
+  participant B as HP B
+  participant W as Dashboard
+  Note over D: Diam melewati done_s dan syarat siklus terpenuhi
+  D->>M: alerts (alert_id baru)
+  D->>M: alert_state active=true, retained
+  D->>M: status DONE, retained
+  M->>B: alerts
+  B->>B: validasi, dedupe, getar + notifikasi di thread alarm
+  M->>W: status DONE dan alasan
+  loop Setiap remind_s sampai konfirmasi
+    D->>M: alerts pengingat, alert_state diperbarui
+    M->>B: alerts
+    B->>B: getar + notifikasi
+  end
+  B->>M: telemetry, goyang jendela 1
+  M->>D: telemetry
+  D->>D: ack_count = 1, tetap DONE
+  B->>M: telemetry, goyang jendela 2
+  M->>D: telemetry
+  D->>D: ack_count = 2, DONE ke IDLE
+  D->>M: alert_state active=false, retained
+  D->>M: status IDLE, retained
+  M->>B: alert_state active=false
+  B->>B: hapus notifikasi
+  M->>W: status IDLE

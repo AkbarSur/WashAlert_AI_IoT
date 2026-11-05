@@ -1,0 +1,17 @@
+flowchart LR
+  P["Pemilik cucian"]
+  O["Operator data"]
+  DV["Pengembang ML"]
+  MC["Mesin cuci<br/>sumber getaran"]
+  BR[("Broker MQTT")]
+  T["Termux:API<br/>sensor, getar, notifikasi"]
+  SYS(["WashAlert AI"])
+  MC -->|getaran| SYS
+  T <-->|nilai sensor, perintah alarm| SYS
+  SYS <-->|pesan MQTT| BR
+  SYS -->|status, alert, penjelasan| P
+  P -->|goyang, ARM / DISARM| SYS
+  O -->|metadata, label| SYS
+  SYS -->|laporan kualitas data| O
+  DV -->|konfigurasi training| SYS
+  SYS -->|model, laporan evaluasi| DV

@@ -1,0 +1,18 @@
+flowchart TD
+  A["Telemetry HP A diterima"] --> B{"Skema, topik, stale,<br/>replay valid?"}
+  B -->|tidak| C["Tolak, hitung alasan"] --> Z["Tunggu telemetry berikutnya"]
+  B -->|ya| D{"Sistem ARM?"}
+  D -->|tidak| E["Status DISARMED"] --> Z
+  D -->|ya| F["Perbarui jendela agregat"]
+  F --> G{"Mode HYBRID, model valid,<br/>fitur lengkap?"}
+  G -->|tidak| H["Aktivitas dari aturan<br/>catat alasan"]
+  G -->|ya| I["Prediksi model"]
+  I --> J{"Probabilitas cukup?"}
+  J -->|tidak| H
+  J -->|ya| K["Aktivitas dari model"]
+  H --> L["Smoothing"]
+  K --> L
+  L --> M["Perbarui FSM"]
+  M --> N{"Syarat selesai terpenuhi?"}
+  N -->|tidak| O["Terbitkan status"] --> Z
+  N -->|ya| P["DONE, terbitkan alert dan alasan"] --> O

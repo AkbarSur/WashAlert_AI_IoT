@@ -1,0 +1,2 @@
+experiment_id,training_timestamp,data_kind,dataset_id,split_version,feature_schema_version,model_type,feature_set,hyperparameters,cv_macro_f1,beats_best_baseline,seed,model_artifact
+exp_20261104T141944_624d6645,2026-11-04T14:19:44.247071+00:00,synthetic,syn_hard_v1,v1,1,decision_tree,F2,"{""max_depth"": 8, ""min_samples_leaf"": 1}",0.8482,True,42,models/development/SYNTHETIC_syn_hard_v1-v1-decision_tree-F2-624d6645

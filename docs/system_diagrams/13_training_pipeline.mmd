@@ -1,0 +1,23 @@
+flowchart TB
+  A["record_session.py<br/>raw.csv + meta.json"] --> B["label_session.py<br/>labels.csv"]
+  B --> C{"validate_dataset.py<br/>lolos?"}
+  C -->|tidak| A
+  C -->|ya| D["build_dataset.py<br/>features.py yang sama dengan detector"]
+  D --> E["windows.csv + manifest"]
+  E --> F["Kunci split per cycle_id<br/>split.json di-commit"]
+  F --> G["Data pengembangan"]
+  F --> T["Test set terkunci"]
+  G --> H["CV leave-one-cycle-out"]
+  H --> I["Baseline mayoritas dan ambang"]
+  H --> J["LR, DT, RF × set fitur F1, F2, F3"]
+  I --> K["Pilih model: macro-F1 OOF,<br/>yang sederhana jika selisih ≤ 0,01"]
+  J --> K
+  K --> L["Pilih ambang probabilitas dan<br/>analisis jeda untuk done_s"]
+  L --> N["Latih ulang pada seluruh data pengembangan"]
+  N --> O["model.joblib + metadata.json + sha256"]
+  O --> P["evaluate.py sekali pada test set"]
+  T --> P
+  O --> Q["replay.py: 4 arm, metrik siklus"]
+  T --> Q
+  P --> R["reports/: metrik, batasan, data_kind"]
+  Q --> R

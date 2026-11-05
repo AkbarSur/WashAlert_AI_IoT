@@ -1,0 +1,44 @@
+flowchart TB
+  subgraph A["HP A / edge1"]
+    A1["hp_mesin.py"] --> A2["edge_runner.py"]
+    A3["sensors.py"] --> A2
+    A4["processing.py + features.py"] --> A2
+    A5["record_session.py, measure_sampling.py<br/>hanya saat pengumpulan data"]
+    A3 --> A5
+  end
+  subgraph B["HP B / edge2"]
+    B1["hp_pemilik.py"] --> B2["edge_runner.py"]
+    B3["sensors.py"] --> B2
+    B4["features.py"] --> B2
+    B2 --> B5["alarm.py, thread terpisah"]
+  end
+  M[("Broker MQTT<br/>TLS, topik per PROJECT_ID")]
+  A2 -->|"edge/edge1/telemetry"| M
+  B2 -->|"edge/edge2/telemetry"| M
+  M -->|"alerts, alert_state"| B2
+  subgraph L["Laptop"]
+    D0["detector.py"] --> D1["main.py: MQTT, tick, lock"]
+    D1 --> D2["messages.py: validasi"]
+    D1 --> D3["rules.py: WasherDetector, FSM"]
+    D3 --> D4["activity.py: sumber aktivitas, smoothing"]
+    D4 --> D5["inference.py: muat dan prediksi"]
+    D4 --> D6["features.py: jendela agregat"]
+    D1 --> D7["state_store.py, opsional"]
+    D0 --> D8["dashboard_server.py"]
+  end
+  M -->|"telemetry, control"| D1
+  D1 -->|"status, alerts, alert_state"| M
+  D8 --> W["dashboard/index.html"]
+  M -->|"status, telemetry WSS"| W
+  W -->|"control"| M
+  C["send_control.py"] -->|control| M
+  subgraph O["Offline di laptop"]
+    O1["data/real, data/synthetic"] --> O2["validate_dataset.py"]
+    O2 --> O3["build_dataset.py"]
+    O3 --> O4["train.py"]
+    O3 --> O5["evaluate.py + replay.py"]
+    O4 --> O6["models/*.joblib + metadata"]
+    O6 --> O5
+  end
+  A5 -.->|salin file| O1
+  O6 -.->|dimuat saat start| D5

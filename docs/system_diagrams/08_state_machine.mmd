@@ -1,0 +1,17 @@
+stateDiagram-v2
+  [*] --> Terpantau
+  state Terpantau {
+    [*] --> IDLE
+    IDLE --> WASHING: aktif selama start_s
+    WASHING --> SPIN: SPIN stabil, spin_seen = true
+    SPIN --> WASHING: WASHING stabil
+    SPIN --> DONE: selesai A
+    WASHING --> DONE: selesai A atau B
+    DONE --> WASHING: aktif selama start_s, koreksi
+    DONE --> IDLE: goyang berurutan
+    WASHING --> SENSOR_LOST: HP A hilang
+    SPIN --> SENSOR_LOST: HP A hilang
+    SENSOR_LOST --> WASHING: telemetri kembali
+  }
+  Terpantau --> DISARMED: DISARM
+  DISARMED --> Terpantau: ARM

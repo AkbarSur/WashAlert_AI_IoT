@@ -1,0 +1,29 @@
+flowchart LR
+  Pemilik(["Pemilik cucian"])
+  Operator(["Operator data"])
+  Dev(["Pengembang ML"])
+  Dosen(["Kelompok / dosen"])
+  subgraph SYS["Batas sistem: WashAlert AI"]
+    U1(["UC-01 Memantau mesin otomatis"])
+    U2(["UC-02 Menerima alert dan pengingat"])
+    U3(["UC-03 Mengonfirmasi dengan goyang"])
+    U4(["UC-04 ARM / DISARM"])
+    U5(["UC-05 Melihat dashboard dan alasan"])
+    U10(["UC-10 Mengukur laju sampling"])
+    U6(["UC-06 Merekam dan melabeli sesi"])
+    U7(["UC-07 Memvalidasi dataset"])
+    U8(["UC-08 Melatih dan mengevaluasi model"])
+    U9(["UC-09 Memutar ulang rekaman"])
+    U11(["UC-11 Menjalankan demo"])
+  end
+  Pemilik --- U1
+  Pemilik --- U2
+  Pemilik --- U3
+  Pemilik --- U4
+  Pemilik --- U5
+  Operator --- U10
+  Operator --- U6
+  Dev --- U7
+  Dev --- U8
+  Dev --- U9
+  Dosen --- U11

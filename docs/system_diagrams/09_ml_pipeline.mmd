@@ -1,0 +1,18 @@
+flowchart LR
+  A["Rekam sesi nyata<br/>HP A"] --> B["Label observasi<br/>protokol tertulis"]
+  B --> C["Validasi data"]
+  C -->|ditolak| A
+  C --> D["Bangun dataset jendela<br/>buang zona transisi"]
+  D --> E["Kunci test set<br/>per siklus"]
+  E --> F["CV kelompok<br/>data non-test"]
+  F --> G["Baseline: mayoritas, ambang"]
+  F --> H["Kandidat: LR, DT, RF"]
+  G --> I["Seleksi model dari validation"]
+  H --> I
+  I --> J["Latih ulang pada data non-test"]
+  J --> K["Evaluasi akhir test set<br/>aktivitas"]
+  J --> L["Pemutaran ulang rekaman<br/>metrik siklus, 4 kelompok"]
+  K --> M["Laporan dan batasan"]
+  L --> M
+  J --> N["Model + metadata + hash"]
+  N --> O["Inference detector"]

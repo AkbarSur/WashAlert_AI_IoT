@@ -1,0 +1,19 @@
+flowchart LR
+  MC["Mesin cuci"] --> P1(("1.0 Akuisisi sensor"))
+  P1 -->|sampel| P2(("2.0 Hitung fitur edge"))
+  P1 -->|sampel mentah| DS1[("D1 Rekaman mentah")]
+  OP["Operator"] -->|label, metadata| DS2[("D2 Label dan sesi")]
+  DS1 --> P7(("7.0 Bangun dataset"))
+  DS2 --> P7
+  P7 --> DS3[("D3 Dataset fitur")]
+  DS3 --> P8(("8.0 Training dan evaluasi"))
+  P8 --> DS4[("D4 Model + metadata")]
+  P2 -->|telemetry| P3(("3.0 Validasi pesan"))
+  P3 -->|fitur valid| P4(("4.0 Tentukan aktivitas"))
+  DS4 --> P4
+  P4 -->|aktivitas, sumber, probabilitas| P5(("5.0 FSM siklus"))
+  PB["HP B"] -->|telemetry goyang| P3
+  P5 -->|alert| PB
+  P5 -->|status| P6(("6.0 Dashboard"))
+  P2 -->|grafik| P6
+  P6 -->|ARM / DISARM| P5

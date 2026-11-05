@@ -1,0 +1,317 @@
+{
+  "data_kind": "synthetic",
+  "dataset_id": "syn_hard_v1",
+  "end_to_end_arm1_legacy": [
+    {
+      "arm": "1_legacy_fsm",
+      "delay_s": null,
+      "detected": false,
+      "false_alerts": 0,
+      "missed": true,
+      "session_id": "SYNTHETIC_SYNM1_C04"
+    },
+    {
+      "arm": "1_legacy_fsm",
+      "delay_s": null,
+      "detected": false,
+      "false_alerts": 0,
+      "missed": true,
+      "session_id": "SYNTHETIC_SYNM1_C05"
+    }
+  ],
+  "end_to_end_pending": "Arm 2, 3, 4 menunggu FSM baru dan integrasi Phase 6",
+  "evaluated_at": "2026-11-04T14:19:48.624614+00:00",
+  "low_probability_rate": 0.0,
+  "model_version": "syn_hard_v1-v1-decision_tree-F2-624d6645",
+  "n_test_windows": 1055,
+  "out_of_range_rate": 0.007582938388625593,
+  "per_session": {
+    "SYNTHETIC_SYNM1_C04": {
+      "longest_active_predicted_idle_s": 0.0,
+      "macro_f1": 0.9782720399324671,
+      "windows": 528
+    },
+    "SYNTHETIC_SYNM1_C05": {
+      "longest_active_predicted_idle_s": 0.0,
+      "macro_f1": 0.8639899535489222,
+      "windows": 527
+    }
+  },
+  "results": {
+    "baseline_fsm_old_mapped": {
+      "accuracy": 0.5867298578199052,
+      "active_predicted_idle_rate": 0.35119726339794755,
+      "balanced_accuracy": 0.6029160858532974,
+      "confusion_matrix": {
+        "labels": [
+          "IDLE",
+          "SPIN",
+          "WASHING"
+        ],
+        "rows_true_cols_pred": [
+          [
+            67,
+            0,
+            111
+          ],
+          [
+            7,
+            143,
+            17
+          ],
+          [
+            301,
+            0,
+            409
+          ]
+        ]
+      },
+      "macro_f1": 0.6069565436504727,
+      "macro_precision": 0.6467684667908132,
+      "macro_recall": 0.6029160858532974,
+      "n": 1055,
+      "per_class": {
+        "IDLE": {
+          "f1": 0.2423146473779385,
+          "precision": 0.17866666666666667,
+          "recall": 0.37640449438202245,
+          "support": 178
+        },
+        "SPIN": {
+          "f1": 0.9225806451612903,
+          "precision": 1.0,
+          "recall": 0.8562874251497006,
+          "support": 167
+        },
+        "WASHING": {
+          "f1": 0.6559743384121892,
+          "precision": 0.7616387337057728,
+          "recall": 0.576056338028169,
+          "support": 710
+        }
+      },
+      "weighted_f1": 0.6283836542633772
+    },
+    "baseline_majority": {
+      "accuracy": 0.6729857819905213,
+      "active_predicted_idle_rate": 0.0,
+      "balanced_accuracy": 0.3333333333333333,
+      "confusion_matrix": {
+        "labels": [
+          "IDLE",
+          "SPIN",
+          "WASHING"
+        ],
+        "rows_true_cols_pred": [
+          [
+            0,
+            0,
+            178
+          ],
+          [
+            0,
+            0,
+            167
+          ],
+          [
+            0,
+            0,
+            710
+          ]
+        ]
+      },
+      "macro_f1": 0.26817752596789424,
+      "macro_precision": 0.22432859399684044,
+      "macro_recall": 0.3333333333333333,
+      "n": 1055,
+      "per_class": {
+        "IDLE": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 178
+        },
+        "SPIN": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 167
+        },
+        "WASHING": {
+          "f1": 0.8045325779036827,
+          "precision": 0.6729857819905213,
+          "recall": 1.0,
+          "support": 710
+        }
+      },
+      "weighted_f1": 0.5414389860773599
+    },
+    "baseline_threshold": {
+      "accuracy": 0.5308056872037915,
+      "active_predicted_idle_rate": 0.56442417331813,
+      "balanced_accuracy": 0.7676056338028169,
+      "confusion_matrix": {
+        "labels": [
+          "IDLE",
+          "SPIN",
+          "WASHING"
+        ],
+        "rows_true_cols_pred": [
+          [
+            178,
+            0,
+            0
+          ],
+          [
+            0,
+            167,
+            0
+          ],
+          [
+            495,
+            0,
+            215
+          ]
+        ]
+      },
+      "macro_f1": 0.627732079905993,
+      "macro_precision": 0.7548291233283804,
+      "macro_recall": 0.7676056338028169,
+      "n": 1055,
+      "per_class": {
+        "IDLE": {
+          "f1": 0.418331374853114,
+          "precision": 0.26448736998514116,
+          "recall": 1.0,
+          "support": 178
+        },
+        "SPIN": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 167
+        },
+        "WASHING": {
+          "f1": 0.4648648648648649,
+          "precision": 1.0,
+          "recall": 0.3028169014084507,
+          "support": 710
+        }
+      },
+      "weighted_f1": 0.5417223116378278
+    },
+    "selected_model": {
+      "accuracy": 0.9374407582938389,
+      "active_predicted_idle_rate": 0.0,
+      "balanced_accuracy": 0.9213061138365775,
+      "confusion_matrix": {
+        "labels": [
+          "IDLE",
+          "SPIN",
+          "WASHING"
+        ],
+        "rows_true_cols_pred": [
+          [
+            144,
+            0,
+            34
+          ],
+          [
+            0,
+            167,
+            0
+          ],
+          [
+            0,
+            32,
+            678
+          ]
+        ]
+      },
+      "macro_f1": 0.9201882472631411,
+      "macro_precision": 0.9304810569702445,
+      "macro_recall": 0.9213061138365775,
+      "n": 1055,
+      "per_class": {
+        "IDLE": {
+          "f1": 0.8944099378881988,
+          "precision": 1.0,
+          "recall": 0.8089887640449438,
+          "support": 178
+        },
+        "SPIN": {
+          "f1": 0.912568306010929,
+          "precision": 0.8391959798994975,
+          "recall": 1.0,
+          "support": 167
+        },
+        "WASHING": {
+          "f1": 0.9535864978902954,
+          "precision": 0.952247191011236,
+          "recall": 0.9549295774647887,
+          "support": 710
+        }
+      },
+      "weighted_f1": 0.9371092791943452
+    },
+    "selected_with_rule_fallback": {
+      "accuracy": 0.9374407582938389,
+      "active_predicted_idle_rate": 0.0,
+      "balanced_accuracy": 0.9213061138365775,
+      "confusion_matrix": {
+        "labels": [
+          "IDLE",
+          "SPIN",
+          "WASHING"
+        ],
+        "rows_true_cols_pred": [
+          [
+            144,
+            0,
+            34
+          ],
+          [
+            0,
+            167,
+            0
+          ],
+          [
+            0,
+            32,
+            678
+          ]
+        ]
+      },
+      "macro_f1": 0.9201882472631411,
+      "macro_precision": 0.9304810569702445,
+      "macro_recall": 0.9213061138365775,
+      "n": 1055,
+      "per_class": {
+        "IDLE": {
+          "f1": 0.8944099378881988,
+          "precision": 1.0,
+          "recall": 0.8089887640449438,
+          "support": 178
+        },
+        "SPIN": {
+          "f1": 0.912568306010929,
+          "precision": 0.8391959798994975,
+          "recall": 1.0,
+          "support": 167
+        },
+        "WASHING": {
+          "f1": 0.9535864978902954,
+          "precision": 0.952247191011236,
+          "recall": 0.9549295774647887,
+          "support": 710
+        }
+      },
+      "weighted_f1": 0.9371092791943452
+    }
+  },
+  "test_groups": [
+    "SYNM1_C04",
+    "SYNM1_C05"
+  ],
+  "warning": "DATA SINTETIS. Bukan bukti performa pada mesin cuci."
+}

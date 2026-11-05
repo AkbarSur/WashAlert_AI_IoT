@@ -1,0 +1,158 @@
+{
+  "data_kind": "synthetic",
+  "model_version": "syn_hard_v1-v1-decision_tree-F2-624d6645",
+  "split": "data/manifests/split_syn_hard_v1_v1.json",
+  "evaluation_ready": false,
+  "test_groups": [
+    "SYNM1_C04",
+    "SYNM1_C05"
+  ],
+  "arms": {
+    "1_legacy_fsm": {
+      "summary": {
+        "cycles": 2,
+        "detected": 0,
+        "missed": 2,
+        "false_alerts": 0,
+        "corrections": 0,
+        "delay_s_mean": null,
+        "delay_s_max": null
+      },
+      "cycles": [
+        {
+          "session_id": "SYNTHETIC_SYNM1_C04",
+          "arm": "1_legacy_fsm",
+          "false_alerts": 0,
+          "detected": false,
+          "missed": true,
+          "delay_s": null
+        },
+        {
+          "session_id": "SYNTHETIC_SYNM1_C05",
+          "arm": "1_legacy_fsm",
+          "false_alerts": 0,
+          "detected": false,
+          "missed": true,
+          "delay_s": null
+        }
+      ]
+    },
+    "2_new_fsm_rule": {
+      "summary": {
+        "cycles": 2,
+        "detected": 0,
+        "missed": 2,
+        "false_alerts": 0,
+        "corrections": 0,
+        "delay_s_mean": null,
+        "delay_s_max": null
+      },
+      "cycles": [
+        {
+          "session_id": "SYNTHETIC_SYNM1_C04",
+          "arm": "2_new_fsm_rule",
+          "corrections": 0,
+          "sources": {
+            "rule": 672,
+            "none": 1
+          },
+          "false_alerts": 0,
+          "detected": false,
+          "missed": true,
+          "delay_s": null
+        },
+        {
+          "session_id": "SYNTHETIC_SYNM1_C05",
+          "arm": "2_new_fsm_rule",
+          "corrections": 0,
+          "sources": {
+            "rule": 672
+          },
+          "false_alerts": 0,
+          "detected": false,
+          "missed": true,
+          "delay_s": null
+        }
+      ]
+    },
+    "3_hybrid": {
+      "summary": {
+        "cycles": 2,
+        "detected": 1,
+        "missed": 1,
+        "false_alerts": 0,
+        "corrections": 0,
+        "delay_s_mean": 155.2,
+        "delay_s_max": 155.2
+      },
+      "cycles": [
+        {
+          "session_id": "SYNTHETIC_SYNM1_C04",
+          "arm": "3_hybrid",
+          "corrections": 0,
+          "sources": {
+            "rule_fallback": 34,
+            "model": 638,
+            "none": 1
+          },
+          "false_alerts": 0,
+          "detected": false,
+          "missed": true,
+          "delay_s": null
+        },
+        {
+          "session_id": "SYNTHETIC_SYNM1_C05",
+          "arm": "3_hybrid",
+          "corrections": 0,
+          "sources": {
+            "rule_fallback": 51,
+            "model": 621
+          },
+          "false_alerts": 0,
+          "detected": true,
+          "missed": false,
+          "delay_s": 155.2
+        }
+      ]
+    },
+    "4_ml_only": {
+      "summary": {
+        "cycles": 2,
+        "detected": 1,
+        "missed": 1,
+        "false_alerts": 0,
+        "corrections": 0,
+        "delay_s_mean": 161.4,
+        "delay_s_max": 161.4
+      },
+      "cycles": [
+        {
+          "session_id": "SYNTHETIC_SYNM1_C04",
+          "arm": "4_ml_only",
+          "corrections": 0,
+          "sources": {
+            "none": 7,
+            "model": 666
+          },
+          "false_alerts": 0,
+          "detected": false,
+          "missed": true,
+          "delay_s": null
+        },
+        {
+          "session_id": "SYNTHETIC_SYNM1_C05",
+          "arm": "4_ml_only",
+          "corrections": 0,
+          "sources": {
+            "none": 6,
+            "model": 666
+          },
+          "false_alerts": 0,
+          "detected": true,
+          "missed": false,
+          "delay_s": 161.4
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+flowchart LR
+  A["HP A / edge1<br/>accel + gyro<br/>motion_rms, rotation_rad"] -->|telemetry QoS 1| M[("Broker MQTT<br/>HiveMQ publik, TLS")]
+  B["HP B / edge2<br/>accel + gyro + alarm"] -->|telemetry, goyang = konfirmasi| M
+  M -->|telemetry, control| D["Laptop / detector.py<br/>moving average, timer, FSM"]
+  D -->|alerts, status retained, Last Will| M
+  M -->|alerts| B
+  M -->|status, telemetry| W["Dashboard browser"]
+  W -->|ARM / DISARM| M

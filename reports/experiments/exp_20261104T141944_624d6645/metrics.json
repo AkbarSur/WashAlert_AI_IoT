@@ -1,0 +1,2120 @@
+{
+  "beats_best_baseline": true,
+  "best_baseline": "baseline_ambang",
+  "calibration": {
+    "calibrated": false,
+    "ece_oof": 0.14092045558716626
+  },
+  "comparison": [
+    {
+      "advantages": "Aturan dapat dicetak, sangat ringan",
+      "algorithm": "decision_tree",
+      "artifact_bytes": 7058,
+      "cv_macro_f1_max": 0.9782603361550729,
+      "cv_macro_f1_mean": 0.795312603361599,
+      "cv_macro_f1_min": 0.5392639741355358,
+      "cv_macro_f1_per_fold": [
+        0.9519509256965151,
+        0.5392639741355358,
+        0.9782603361550729,
+        0.8523880044427989,
+        0.8478618421052632,
+        0.6021505376344086
+      ],
+      "feature_set": "F1",
+      "kind": "candidate",
+      "limitations": "Mudah overfit, batas keputusan kasar",
+      "n_grid": 9,
+      "name": "decision_tree/F1",
+      "oof_metrics": {
+        "accuracy": 0.7802718937717357,
+        "active_predicted_idle_rate": 0.20570342205323194,
+        "balanced_accuracy": 0.8189437177578709,
+        "confusion_matrix": {
+          "labels": [
+            "IDLE",
+            "SPIN",
+            "WASHING"
+          ],
+          "rows_true_cols_pred": [
+            [
+              381,
+              0,
+              152
+            ],
+            [
+              0,
+              498,
+              2
+            ],
+            [
+              541,
+              0,
+              1589
+            ]
+          ]
+        },
+        "macro_f1": 0.7807532918127605,
+        "macro_precision": 0.7749595634889522,
+        "macro_recall": 0.8189437177578709,
+        "n": 3163,
+        "per_class": {
+          "IDLE": {
+            "f1": 0.5237113402061856,
+            "precision": 0.41323210412147504,
+            "recall": 0.7148217636022514,
+            "support": 533
+          },
+          "SPIN": {
+            "f1": 0.9979959919839679,
+            "precision": 1.0,
+            "recall": 0.996,
+            "support": 500
+          },
+          "WASHING": {
+            "f1": 0.8205525432481281,
+            "precision": 0.9116465863453815,
+            "recall": 0.7460093896713615,
+            "support": 2130
+          }
+        },
+        "weighted_f1": 0.7985814282138456
+      },
+      "params": {
+        "max_depth": 8,
+        "min_samples_leaf": 20
+      },
+      "timing": {
+        "fit_s": 0.014,
+        "latency": {
+          "p50_ms": 0.157,
+          "p95_ms": 0.242,
+          "throughput_per_s": 5859.5
+        },
+        "search_s": 0.86
+      },
+      "validation_holdout": {
+        "accuracy": 0.747867298578199,
+        "active_predicted_idle_rate": 0.26567844925883694,
+        "balanced_accuracy": 0.828812575829509,
+        "confusion_matrix": {
+          "labels": [
+            "IDLE",
+            "SPIN",
+            "WASHING"
+          ],
+          "rows_true_cols_pred": [
+            [
+              145,
+              0,
+              33
+            ],
+            [
+              0,
+              167,
+              0
+            ],
+            [
+              233,
+              0,
+              477
+            ]
+          ]
+        },
+        "macro_f1": 0.7678499823092345,
+        "macro_precision": 0.7729640004149809,
+        "macro_recall": 0.828812575829509,
+        "n": 1055,
+        "per_class": {
+          "IDLE": {
+            "f1": 0.5215827338129496,
+            "precision": 0.3835978835978836,
+            "recall": 0.8146067415730337,
+            "support": 178
+          },
+          "SPIN": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 167
+          },
+          "WASHING": {
+            "f1": 0.7819672131147541,
+            "precision": 0.9352941176470588,
+            "recall": 0.671830985915493,
+            "support": 710
+          }
+        },
+        "weighted_f1": 0.7725482918769483
+      }
+    },
+    {
+      "advantages": "Aturan dapat dicetak, sangat ringan",
+      "algorithm": "decision_tree",
+      "artifact_bytes": 9346,
+      "cv_macro_f1_max": 0.9569872206753766,
+      "cv_macro_f1_mean": 0.8481602228945437,
+      "cv_macro_f1_min": 0.66950552501527,
+      "cv_macro_f1_per_fold": [
+        0.9100400457665904,
+        0.66950552501527,
+        0.9569872206753766,
+        0.9139843784475531,
+        0.9060633213859021,
+        0.7323808460765711
+      ],
+      "feature_set": "F2",
+      "kind": "candidate",
+      "limitations": "Mudah overfit, batas keputusan kasar",
+      "n_grid": 9,
+      "name": "decision_tree/F2",
+      "oof_metrics": {
+        "accuracy": 0.8438191590262409,
+        "active_predicted_idle_rate": 0.13650190114068442,
+        "balanced_accuracy": 0.859390698999081,
+        "confusion_matrix": {
+          "labels": [
+            "IDLE",
+            "SPIN",
+            "WASHING"
+          ],
+          "rows_true_cols_pred": [
+            [
+              398,
+              0,
+              135
+            ],
+            [
+              0,
+              500,
+              0
+            ],
+            [
+              359,
+              0,
+              1771
+            ]
+          ]
+        },
+        "macro_f1": 0.8315519497647784,
+        "macro_precision": 0.8183102053678319,
+        "macro_recall": 0.859390698999081,
+        "n": 3163,
+        "per_class": {
+          "IDLE": {
+            "f1": 0.6170542635658914,
+            "precision": 0.5257595772787318,
+            "recall": 0.7467166979362101,
+            "support": 533
+          },
+          "SPIN": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 500
+          },
+          "WASHING": {
+            "f1": 0.877601585728444,
+            "precision": 0.9291710388247639,
+            "recall": 0.8314553990610328,
+            "support": 2130
+          }
+        },
+        "weighted_f1": 0.8530449889605456
+      },
+      "params": {
+        "max_depth": 8,
+        "min_samples_leaf": 1
+      },
+      "timing": {
+        "fit_s": 0.022,
+        "latency": {
+          "p50_ms": 0.152,
+          "p95_ms": 0.264,
+          "throughput_per_s": 5748.6
+        },
+        "search_s": 1.211
+      },
+      "validation_holdout": {
+        "accuracy": 0.8208530805687204,
+        "active_predicted_idle_rate": 0.1573546180159635,
+        "balanced_accuracy": 0.8397056496281058,
+        "confusion_matrix": {
+          "labels": [
+            "IDLE",
+            "SPIN",
+            "WASHING"
+          ],
+          "rows_true_cols_pred": [
+            [
+              127,
+              0,
+              51
+            ],
+            [
+              0,
+              167,
+              0
+            ],
+            [
+              138,
+              0,
+              572
+            ]
+          ]
+        },
+        "macro_f1": 0.8105259949298836,
+        "macro_precision": 0.7991277749174719,
+        "macro_recall": 0.8397056496281058,
+        "n": 1055,
+        "per_class": {
+          "IDLE": {
+            "f1": 0.5733634311512416,
+            "precision": 0.47924528301886793,
+            "recall": 0.7134831460674157,
+            "support": 178
+          },
+          "SPIN": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 167
+          },
+          "WASHING": {
+            "f1": 0.8582145536384096,
+            "precision": 0.9181380417335474,
+            "recall": 0.8056338028169014,
+            "support": 710
+          }
+        },
+        "weighted_f1": 0.8325981268513667
+      }
+    },
+    {
+      "advantages": "Aturan dapat dicetak, sangat ringan",
+      "algorithm": "decision_tree",
+      "artifact_bytes": 10050,
+      "cv_macro_f1_max": 0.9312070938215102,
+      "cv_macro_f1_mean": 0.8267929011160454,
+      "cv_macro_f1_min": 0.6627803501161028,
+      "cv_macro_f1_per_fold": [
+        0.9230814367743828,
+        0.6627803501161028,
+        0.9220068055087588,
+        0.847803979771328,
+        0.9312070938215102,
+        0.6738777407041893
+      ],
+      "feature_set": "F3",
+      "kind": "candidate",
+      "limitations": "Mudah overfit, batas keputusan kasar",
+      "n_grid": 9,
+      "name": "decision_tree/F3",
+      "oof_metrics": {
+        "accuracy": 0.8213721150806197,
+        "active_predicted_idle_rate": 0.1574144486692015,
+        "balanced_accuracy": 0.8407772463423443,
+        "confusion_matrix": {
+          "labels": [
+            "IDLE",
+            "SPIN",
+            "WASHING"
+          ],
+          "rows_true_cols_pred": [
+            [
+              382,
+              0,
+              151
+            ],
+            [
+              0,
+              500,
+              0
+            ],
+            [
+              414,
+              0,
+              1716
+            ]
+          ]
+        },
+        "macro_f1": 0.8111707683446306,
+        "macro_precision": 0.7996736943062034,
+        "macro_recall": 0.8407772463423443,
+        "n": 3163,
+        "per_class": {
+          "IDLE": {
+            "f1": 0.5748683220466516,
+            "precision": 0.4798994974874372,
+            "recall": 0.7166979362101313,
+            "support": 533
+          },
+          "SPIN": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 500
+          },
+          "WASHING": {
+            "f1": 0.8586439829872404,
+            "precision": 0.919121585431173,
+            "recall": 0.8056338028169014,
+            "support": 2130
+          }
+        },
+        "weighted_f1": 0.8331699334219688
+      },
+      "params": {
+        "max_depth": 8,
+        "min_samples_leaf": 5
+      },
+      "timing": {
+        "fit_s": 0.031,
+        "latency": {
+          "p50_ms": 0.15,
+          "p95_ms": 0.263,
+          "throughput_per_s": 6061.7
+        },
+        "search_s": 1.61
+      },
+      "validation_holdout": {
+        "accuracy": 0.8227488151658767,
+        "active_predicted_idle_rate": 0.14823261117445838,
+        "balanced_accuracy": 0.832225563116527,
+        "confusion_matrix": {
+          "labels": [
+            "IDLE",
+            "SPIN",
+            "WASHING"
+          ],
+          "rows_true_cols_pred": [
+            [
+              121,
+              0,
+              57
+            ],
+            [
+              0,
+              167,
+              0
+            ],
+            [
+              130,
+              0,
+              580
+            ]
+          ]
+        },
+        "macro_f1": 0.8084251803628195,
+        "macro_precision": 0.7975299221742022,
+        "macro_recall": 0.832225563116527,
+        "n": 1055,
+        "per_class": {
+          "IDLE": {
+            "f1": 0.5641025641025641,
+            "precision": 0.4820717131474104,
+            "recall": 0.6797752808988764,
+            "support": 178
+          },
+          "SPIN": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 167
+          },
+          "WASHING": {
+            "f1": 0.8611729769858946,
+            "precision": 0.9105180533751962,
+            "recall": 0.8169014084507042,
+            "support": 710
+          }
+        },
+        "weighted_f1": 0.8330266067016507
+      }
+    },
+    {
+      "advantages": "Ringan, koefisien dapat dibaca",
+      "algorithm": "logistic_regression",
+      "artifact_bytes": 1697,
+      "cv_macro_f1_max": 0.9830913725650566,
+      "cv_macro_f1_mean": 0.775820620884511,
+      "cv_macro_f1_min": 0.43745496012089796,
+      "cv_macro_f1_per_fold": [
+        0.8925897631779985,
+        0.43745496012089796,
+        0.9830913725650566,
+        0.9537835582139379,
+        0.9312070938215102,
+        0.4567969774076644
+      ],
+      "feature_set": "F1",
+      "kind": "candidate",
+      "limitations": "Batas linear, perlu scaling",
+      "n_grid": 3,
+      "name": "logistic_regression/F1",
+      "oof_metrics": {
+        "accuracy": 0.7467594056275688,
+        "active_predicted_idle_rate": 0.25475285171102663,
+        "balanced_accuracy": 0.8123143983769198,
+        "confusion_matrix": {
+          "labels": [
+            "IDLE",
+            "SPIN",
+            "WASHING"
+          ],
+          "rows_true_cols_pred": [
+            [
+              424,
+              0,
+              109
+            ],
+            [
+              0,
+              478,
+              22
+            ],
+            [
+              670,
+              0,
+              1460
+            ]
+          ]
+        },
+        "macro_f1": 0.7611483566205869,
+        "macro_precision": 0.7684101345510298,
+        "macro_recall": 0.8123143983769198,
+        "n": 3163,
+        "per_class": {
+          "IDLE": {
+            "f1": 0.5212046711739398,
+            "precision": 0.3875685557586837,
+            "recall": 0.7954971857410882,
+            "support": 533
+          },
+          "SPIN": {
+            "f1": 0.9775051124744376,
+            "precision": 1.0,
+            "recall": 0.956,
+            "support": 500
+          },
+          "WASHING": {
+            "f1": 0.7847352862133835,
+            "precision": 0.9176618478944061,
+            "recall": 0.6854460093896714,
+            "support": 2130
+          }
+        },
+        "weighted_f1": 0.7708001282350413
+      },
+      "params": {
+        "C": 10.0
+      },
+      "timing": {
+        "fit_s": 0.038,
+        "latency": {
+          "p50_ms": 0.605,
+          "p95_ms": 0.741,
+          "throughput_per_s": 1661.6
+        },
+        "search_s": 0.584
+      },
+      "validation_holdout": {
+        "accuracy": 0.6748815165876777,
+        "active_predicted_idle_rate": 0.34777651083238315,
+        "balanced_accuracy": 0.7870496386559055,
+        "confusion_matrix": {
+          "labels": [
+            "IDLE",
+            "SPIN",
+            "WASHING"
+          ],
+          "rows_true_cols_pred": [
+            [
+              141,
+              0,
+              37
+            ],
+            [
+              0,
+              167,
+              0
+            ],
+            [
+              305,
+              1,
+              404
+            ]
+          ]
+        },
+        "macro_f1": 0.71697875489225,
+        "macro_precision": 0.7420969633493657,
+        "macro_recall": 0.7870496386559055,
+        "n": 1055,
+        "per_class": {
+          "IDLE": {
+            "f1": 0.4519230769230769,
+            "precision": 0.31614349775784756,
+            "recall": 0.7921348314606742,
+            "support": 178
+          },
+          "SPIN": {
+            "f1": 0.9970149253731343,
+            "precision": 0.9940476190476191,
+            "recall": 1.0,
+            "support": 167
+          },
+          "WASHING": {
+            "f1": 0.7019982623805386,
+            "precision": 0.9160997732426304,
+            "recall": 0.5690140845070423,
+            "support": 710
+          }
+        },
+        "weighted_f1": 0.7065048023884394
+      }
+    },
+    {
+      "advantages": "Ringan, koefisien dapat dibaca",
+      "algorithm": "logistic_regression",
+      "artifact_bytes": 1985,
+      "cv_macro_f1_max": 0.9542582417582417,
+      "cv_macro_f1_mean": 0.8024918671789759,
+      "cv_macro_f1_min": 0.5264485693774997,
+      "cv_macro_f1_per_fold": [
+        0.9312070938215102,
+        0.5562957667692484,
+        0.9429457908909965,
+        0.9037957404563576,
+        0.9542582417582417,
+        0.5264485693774997
+      ],
+      "feature_set": "F2",
+      "kind": "candidate",
+      "limitations": "Batas linear, perlu scaling",
+      "n_grid": 3,
+      "name": "logistic_regression/F2",
+      "oof_metrics": {
+        "accuracy": 0.7761618716408473,
+        "active_predicted_idle_rate": 0.23155893536121672,
+        "balanced_accuracy": 0.8427811396207137,
+        "confusion_matrix": {
+          "labels": [
+            "IDLE",
+            "SPIN",
+            "WASHING"
+          ],
+          "rows_true_cols_pred": [
+            [
+              434,
+              0,
+              99
+            ],
+            [
+              0,
+              500,
+              0
+            ],
+            [
+              609,
+              0,
+              1521
+            ]
+          ]
+        },
+        "macro_f1": 0.7873204737732656,
+        "macro_precision": 0.7849987571464082,
+        "macro_recall": 0.8427811396207137,
+        "n": 3163,
+        "per_class": {
+          "IDLE": {
+            "f1": 0.550761421319797,
+            "precision": 0.4161073825503356,
+            "recall": 0.8142589118198874,
+            "support": 533
+          },
+          "SPIN": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 500
+          },
+          "WASHING": {
+            "f1": 0.8112,
+            "precision": 0.9388888888888889,
+            "recall": 0.7140845070422536,
+            "support": 2130
+          }
+        },
+        "weighted_f1": 0.7971583425745974
+      },
+      "params": {
+        "C": 10.0
+      },
+      "timing": {
+        "fit_s": 0.072,
+        "latency": {
+          "p50_ms": 0.413,
+          "p95_ms": 0.626,
+          "throughput_per_s": 2254.6
+        },
+        "search_s": 0.652
+      },
+      "validation_holdout": {
+        "accuracy": 0.7194312796208531,
+        "active_predicted_idle_rate": 0.31927023945267957,
+        "balanced_accuracy": 0.8385820541224877,
+        "confusion_matrix": {
+          "labels": [
+            "IDLE",
+            "SPIN",
+            "WASHING"
+          ],
+          "rows_true_cols_pred": [
+            [
+              162,
+              0,
+              16
+            ],
+            [
+              0,
+              167,
+              0
+            ],
+            [
+              280,
+              0,
+              430
+            ]
+          ]
+        },
+        "macro_f1": 0.7555084272798304,
+        "macro_precision": 0.7768804658807297,
+        "macro_recall": 0.8385820541224877,
+        "n": 1055,
+        "per_class": {
+          "IDLE": {
+            "f1": 0.5225806451612903,
+            "precision": 0.3665158371040724,
+            "recall": 0.9101123595505618,
+            "support": 178
+          },
+          "SPIN": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 167
+          },
+          "WASHING": {
+            "f1": 0.7439446366782007,
+            "precision": 0.9641255605381166,
+            "recall": 0.6056338028169014,
+            "support": 710
+          }
+        },
+        "weighted_f1": 0.747128006521547
+      }
+    },
+    {
+      "advantages": "Ringan, koefisien dapat dibaca",
+      "algorithm": "logistic_regression",
+      "artifact_bytes": 2273,
+      "cv_macro_f1_max": 0.9597320001360407,
+      "cv_macro_f1_mean": 0.8054972678179059,
+      "cv_macro_f1_min": 0.5521578640779212,
+      "cv_macro_f1_per_fold": [
+        0.9570087229916187,
+        0.5521578640779212,
+        0.9341649650613618,
+        0.8710437175823013,
+        0.9597320001360407,
+        0.5588763370581922
+      ],
+      "feature_set": "F3",
+      "kind": "candidate",
+      "limitations": "Batas linear, perlu scaling",
+      "n_grid": 3,
+      "name": "logistic_regression/F3",
+      "oof_metrics": {
+        "accuracy": 0.7818526715143851,
+        "active_predicted_idle_rate": 0.2209125475285171,
+        "balanced_accuracy": 0.8406614227789082,
+        "confusion_matrix": {
+          "labels": [
+            "IDLE",
+            "SPIN",
+            "WASHING"
+          ],
+          "rows_true_cols_pred": [
+            [
+              430,
+              0,
+              103
+            ],
+            [
+              0,
+              494,
+              6
+            ],
+            [
+              581,
+              0,
+              1549
+            ]
+          ]
+        },
+        "macro_f1": 0.7896014767608336,
+        "macro_precision": 0.7865265354124334,
+        "macro_recall": 0.8406614227789082,
+        "n": 3163,
+        "per_class": {
+          "IDLE": {
+            "f1": 0.5569948186528497,
+            "precision": 0.42532146389713155,
+            "recall": 0.8067542213883677,
+            "support": 533
+          },
+          "SPIN": {
+            "f1": 0.993963782696177,
+            "precision": 1.0,
+            "recall": 0.988,
+            "support": 500
+          },
+          "WASHING": {
+            "f1": 0.8178458289334741,
+            "precision": 0.9342581423401689,
+            "recall": 0.7272300469483568,
+            "support": 2130
+          }
+        },
+        "weighted_f1": 0.801729922642541
+      },
+      "params": {
+        "C": 10.0
+      },
+      "timing": {
+        "fit_s": 0.046,
+        "latency": {
+          "p50_ms": 0.42,
+          "p95_ms": 0.562,
+          "throughput_per_s": 2335.2
+        },
+        "search_s": 0.829
+      },
+      "validation_holdout": {
+        "accuracy": 0.7156398104265402,
+        "active_predicted_idle_rate": 0.3112884834663626,
+        "balanced_accuracy": 0.821269188162684,
+        "confusion_matrix": {
+          "labels": [
+            "IDLE",
+            "SPIN",
+            "WASHING"
+          ],
+          "rows_true_cols_pred": [
+            [
+              151,
+              0,
+              27
+            ],
+            [
+              0,
+              167,
+              0
+            ],
+            [
+              273,
+              0,
+              437
+            ]
+          ]
+        },
+        "macro_f1": 0.7487081675505273,
+        "macro_precision": 0.7659808067664281,
+        "macro_recall": 0.821269188162684,
+        "n": 1055,
+        "per_class": {
+          "IDLE": {
+            "f1": 0.5016611295681063,
+            "precision": 0.3561320754716981,
+            "recall": 0.848314606741573,
+            "support": 178
+          },
+          "SPIN": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 167
+          },
+          "WASHING": {
+            "f1": 0.7444633730834753,
+            "precision": 0.9418103448275862,
+            "recall": 0.6154929577464788,
+            "support": 710
+          }
+        },
+        "weighted_f1": 0.7439475601444459
+      }
+    },
+    {
+      "advantages": "Menangkap interaksi fitur, tidak perlu scaling",
+      "algorithm": "random_forest",
+      "artifact_bytes": 1754234,
+      "cv_macro_f1_max": 0.9855709725750765,
+      "cv_macro_f1_mean": 0.8171495301115678,
+      "cv_macro_f1_min": 0.6045944287136322,
+      "cv_macro_f1_per_fold": [
+        0.9514800148389714,
+        0.618879868747125,
+        0.9855709725750765,
+        0.9197463768115942,
+        0.8226255189830073,
+        0.6045944287136322
+      ],
+      "feature_set": "F1",
+      "kind": "candidate",
+      "limitations": "Artefak dan latensi lebih besar, sulit dijelaskan per keputusan",
+      "n_grid": 6,
+      "name": "random_forest/F1",
+      "oof_metrics": {
+        "accuracy": 0.8042997154600063,
+        "active_predicted_idle_rate": 0.17642585551330797,
+        "balanced_accuracy": 0.8303684051358391,
+        "confusion_matrix": {
+          "labels": [
+            "IDLE",
+            "SPIN",
+            "WASHING"
+          ],
+          "rows_true_cols_pred": [
+            [
+              380,
+              0,
+              153
+            ],
+            [
+              0,
+              498,
+              2
+            ],
+            [
+              464,
+              0,
+              1666
+            ]
+          ]
+        },
+        "macro_f1": 0.7977504226018644,
+        "macro_precision": 0.7883729666094963,
+        "macro_recall": 0.8303684051358391,
+        "n": 3163,
+        "per_class": {
+          "IDLE": {
+            "f1": 0.5519244734931009,
+            "precision": 0.45023696682464454,
+            "recall": 0.7129455909943715,
+            "support": 533
+          },
+          "SPIN": {
+            "f1": 0.9979959919839679,
+            "precision": 1.0,
+            "recall": 0.996,
+            "support": 500
+          },
+          "WASHING": {
+            "f1": 0.8433308023285244,
+            "precision": 0.914881933003844,
+            "recall": 0.7821596244131456,
+            "support": 2130
+          }
+        },
+        "weighted_f1": 0.8186747863811455
+      },
+      "params": {
+        "max_depth": null,
+        "max_features": "sqrt",
+        "min_samples_leaf": 5,
+        "n_estimators": 100
+      },
+      "timing": {
+        "fit_s": 0.555,
+        "latency": {
+          "p50_ms": 6.979,
+          "p95_ms": 12.355,
+          "throughput_per_s": 128.1
+        },
+        "search_s": 15.712
+      },
+      "validation_holdout": {
+        "accuracy": 0.7677725118483413,
+        "active_predicted_idle_rate": 0.20752565564424175,
+        "balanced_accuracy": 0.796576462520441,
+        "confusion_matrix": {
+          "labels": [
+            "IDLE",
+            "SPIN",
+            "WASHING"
+          ],
+          "rows_true_cols_pred": [
+            [
+              115,
+              0,
+              63
+            ],
+            [
+              0,
+              167,
+              0
+            ],
+            [
+              182,
+              0,
+              528
+            ]
+          ]
+        },
+        "macro_f1": 0.7652979489461548,
+        "macro_precision": 0.7602021341446045,
+        "macro_recall": 0.796576462520441,
+        "n": 1055,
+        "per_class": {
+          "IDLE": {
+            "f1": 0.4842105263157895,
+            "precision": 0.3872053872053872,
+            "recall": 0.6460674157303371,
+            "support": 178
+          },
+          "SPIN": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 167
+          },
+          "WASHING": {
+            "f1": 0.8116833205226749,
+            "precision": 0.8934010152284264,
+            "recall": 0.7436619718309859,
+            "support": 710
+          }
+        },
+        "weighted_f1": 0.786241356640104
+      }
+    },
+    {
+      "advantages": "Menangkap interaksi fitur, tidak perlu scaling",
+      "algorithm": "random_forest",
+      "artifact_bytes": 2100250,
+      "cv_macro_f1_max": 0.9341649650613618,
+      "cv_macro_f1_mean": 0.8271956950607612,
+      "cv_macro_f1_min": 0.6867164092653928,
+      "cv_macro_f1_per_fold": [
+        0.8747921892676209,
+        0.7252336415242153,
+        0.9341649650613618,
+        0.8749164698020687,
+        0.8673504954439077,
+        0.6867164092653928
+      ],
+      "feature_set": "F2",
+      "kind": "candidate",
+      "limitations": "Artefak dan latensi lebih besar, sulit dijelaskan per keputusan",
+      "n_grid": 6,
+      "name": "random_forest/F2",
+      "oof_metrics": {
+        "accuracy": 0.8318052481821055,
+        "active_predicted_idle_rate": 0.13840304182509505,
+        "balanced_accuracy": 0.8379703276989433,
+        "confusion_matrix": {
+          "labels": [
+            "IDLE",
+            "SPIN",
+            "WASHING"
+          ],
+          "rows_true_cols_pred": [
+            [
+              365,
+              0,
+              168
+            ],
+            [
+              0,
+              500,
+              0
+            ],
+            [
+              364,
+              0,
+              1766
+            ]
+          ]
+        },
+        "macro_f1": 0.8158471326187238,
+        "macro_precision": 0.8046064244437731,
+        "macro_recall": 0.8379703276989433,
+        "n": 3163,
+        "per_class": {
+          "IDLE": {
+            "f1": 0.5784469096671949,
+            "precision": 0.5006858710562414,
+            "recall": 0.6848030018761726,
+            "support": 533
+          },
+          "SPIN": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 500
+          },
+          "WASHING": {
+            "f1": 0.8690944881889764,
+            "precision": 0.9131334022750776,
+            "recall": 0.8291079812206573,
+            "support": 2130
+          }
+        },
+        "weighted_f1": 0.8408104529545162
+      },
+      "params": {
+        "max_depth": null,
+        "max_features": "sqrt",
+        "min_samples_leaf": 1,
+        "n_estimators": 100
+      },
+      "timing": {
+        "fit_s": 0.681,
+        "latency": {
+          "p50_ms": 7.32,
+          "p95_ms": 12.843,
+          "throughput_per_s": 119.4
+        },
+        "search_s": 18.084
+      },
+      "validation_holdout": {
+        "accuracy": 0.8151658767772512,
+        "active_predicted_idle_rate": 0.15393386545039908,
+        "balanced_accuracy": 0.8242601677480614,
+        "confusion_matrix": {
+          "labels": [
+            "IDLE",
+            "SPIN",
+            "WASHING"
+          ],
+          "rows_true_cols_pred": [
+            [
+              118,
+              0,
+              60
+            ],
+            [
+              0,
+              167,
+              0
+            ],
+            [
+              135,
+              0,
+              575
+            ]
+          ]
+        },
+        "macro_f1": 0.8008607974883343,
+        "macro_precision": 0.7906383243596528,
+        "macro_recall": 0.8242601677480614,
+        "n": 1055,
+        "per_class": {
+          "IDLE": {
+            "f1": 0.5475638051044084,
+            "precision": 0.466403162055336,
+            "recall": 0.6629213483146067,
+            "support": 178
+          },
+          "SPIN": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 167
+          },
+          "WASHING": {
+            "f1": 0.8550185873605948,
+            "precision": 0.905511811023622,
+            "recall": 0.8098591549295775,
+            "support": 710
+          }
+        },
+        "weighted_f1": 0.8260943642982056
+      }
+    },
+    {
+      "advantages": "Menangkap interaksi fitur, tidak perlu scaling",
+      "algorithm": "random_forest",
+      "artifact_bytes": 1900490,
+      "cv_macro_f1_max": 0.9341649650613618,
+      "cv_macro_f1_mean": 0.8380141171643509,
+      "cv_macro_f1_min": 0.7071616613847108,
+      "cv_macro_f1_per_fold": [
+        0.9220423027672077,
+        0.7156032463141764,
+        0.9341649650613618,
+        0.8855563305691184,
+        0.8635561968895301,
+        0.7071616613847108
+      ],
+      "feature_set": "F3",
+      "kind": "candidate",
+      "limitations": "Artefak dan latensi lebih besar, sulit dijelaskan per keputusan",
+      "n_grid": 6,
+      "name": "random_forest/F3",
+      "oof_metrics": {
+        "accuracy": 0.8425545368321214,
+        "active_predicted_idle_rate": 0.12585551330798478,
+        "balanced_accuracy": 0.8437600378170629,
+        "confusion_matrix": {
+          "labels": [
+            "IDLE",
+            "SPIN",
+            "WASHING"
+          ],
+          "rows_true_cols_pred": [
+            [
+              366,
+              0,
+              167
+            ],
+            [
+              0,
+              500,
+              0
+            ],
+            [
+              331,
+              0,
+              1799
+            ]
+          ]
+        },
+        "macro_f1": 0.8245133066565041,
+        "macro_precision": 0.8133878517290349,
+        "macro_recall": 0.8437600378170629,
+        "n": 3163,
+        "per_class": {
+          "IDLE": {
+            "f1": 0.5951219512195122,
+            "precision": 0.5251076040172167,
+            "recall": 0.6866791744840526,
+            "support": 533
+          },
+          "SPIN": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 500
+          },
+          "WASHING": {
+            "f1": 0.87841796875,
+            "precision": 0.9150559511698881,
+            "recall": 0.8446009389671362,
+            "support": 2130
+          }
+        },
+        "weighted_f1": 0.8498989166732532
+      },
+      "params": {
+        "max_depth": null,
+        "max_features": "sqrt",
+        "min_samples_leaf": 1,
+        "n_estimators": 100
+      },
+      "timing": {
+        "fit_s": 0.733,
+        "latency": {
+          "p50_ms": 7.018,
+          "p95_ms": 15.06,
+          "throughput_per_s": 115.2
+        },
+        "search_s": 23.521
+      },
+      "validation_holdout": {
+        "accuracy": 0.8303317535545024,
+        "active_predicted_idle_rate": 0.1402508551881414,
+        "balanced_accuracy": 0.8373846072690827,
+        "confusion_matrix": {
+          "labels": [
+            "IDLE",
+            "SPIN",
+            "WASHING"
+          ],
+          "rows_true_cols_pred": [
+            [
+              122,
+              0,
+              56
+            ],
+            [
+              0,
+              167,
+              0
+            ],
+            [
+              123,
+              0,
+              587
+            ]
+          ]
+        },
+        "macro_f1": 0.8148445185290022,
+        "macro_precision": 0.8036224754287407,
+        "macro_recall": 0.8373846072690827,
+        "n": 1055,
+        "per_class": {
+          "IDLE": {
+            "f1": 0.5768321513002365,
+            "precision": 0.49795918367346936,
+            "recall": 0.6853932584269663,
+            "support": 178
+          },
+          "SPIN": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 167
+          },
+          "WASHING": {
+            "f1": 0.8677014042867701,
+            "precision": 0.9129082426127527,
+            "recall": 0.8267605633802817,
+            "support": 710
+          }
+        },
+        "weighted_f1": 0.8395678862322737
+      }
+    },
+    {
+      "advantages": "Batas bawah sederhana",
+      "algorithm": "baseline_mayoritas",
+      "artifact_bytes": null,
+      "cv_macro_f1_max": 0.2686341278849792,
+      "cv_macro_f1_mean": 0.26827899703706976,
+      "cv_macro_f1_min": 0.26802567006417516,
+      "cv_macro_f1_per_fold": [
+        0.2683295540438398,
+        0.2681732580037665,
+        0.2681818181818182,
+        0.2686341278849792,
+        0.26802567006417516,
+        0.2683295540438398
+      ],
+      "feature_set": "-",
+      "kind": "baseline",
+      "limitations": "Tidak membedakan apa pun",
+      "n_grid": 0,
+      "name": "baseline_mayoritas",
+      "oof_metrics": {
+        "accuracy": 0.6734113183686373,
+        "active_predicted_idle_rate": 0.0,
+        "balanced_accuracy": 0.3333333333333333,
+        "confusion_matrix": {
+          "labels": [
+            "IDLE",
+            "SPIN",
+            "WASHING"
+          ],
+          "rows_true_cols_pred": [
+            [
+              0,
+              0,
+              533
+            ],
+            [
+              0,
+              0,
+              500
+            ],
+            [
+              0,
+              0,
+              2130
+            ]
+          ]
+        },
+        "macro_f1": 0.2682788588702059,
+        "macro_precision": 0.22447043945621245,
+        "macro_recall": 0.3333333333333333,
+        "n": 3163,
+        "per_class": {
+          "IDLE": {
+            "f1": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 533
+          },
+          "SPIN": {
+            "f1": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 500
+          },
+          "WASHING": {
+            "f1": 0.8048365766106178,
+            "precision": 0.6734113183686373,
+            "recall": 1.0,
+            "support": 2130
+          }
+        },
+        "weighted_f1": 0.541986060126657
+      },
+      "params": "Tebakan kelas terbanyak",
+      "timing": null,
+      "validation_holdout": null
+    },
+    {
+      "advantages": "Tidak perlu data training",
+      "algorithm": "baseline_ambang",
+      "artifact_bytes": null,
+      "cv_macro_f1_max": 0.9668990196443881,
+      "cv_macro_f1_mean": 0.49350659225541854,
+      "cv_macro_f1_min": 0.1111111111111111,
+      "cv_macro_f1_per_fold": [
+        0.8543127845453427,
+        0.1111111111111111,
+        0.46531374117581015,
+        0.45208332232165044,
+        0.9668990196443881,
+        0.11131957473420888
+      ],
+      "feature_set": "-",
+      "kind": "baseline",
+      "limitations": "Tanpa ingatan, ambang ditulis manusia, peka offset",
+      "n_grid": 0,
+      "name": "baseline_ambang",
+      "oof_metrics": {
+        "accuracy": 0.47265254505216564,
+        "active_predicted_idle_rate": 0.570722433460076,
+        "balanced_accuracy": 0.6537683881064162,
+        "confusion_matrix": {
+          "labels": [
+            "IDLE",
+            "SPIN",
+            "WASHING"
+          ],
+          "rows_true_cols_pred": [
+            [
+              533,
+              0,
+              0
+            ],
+            [
+              0,
+              333,
+              167
+            ],
+            [
+              1501,
+              0,
+              629
+            ]
+          ]
+        },
+        "macro_f1": 0.5482430115174813,
+        "macro_precision": 0.6840820786989684,
+        "macro_recall": 0.6537683881064162,
+        "n": 3163,
+        "per_class": {
+          "IDLE": {
+            "f1": 0.4152707440592131,
+            "precision": 0.26204523107177974,
+            "recall": 1.0,
+            "support": 533
+          },
+          "SPIN": {
+            "f1": 0.7995198079231692,
+            "precision": 1.0,
+            "recall": 0.666,
+            "support": 500
+          },
+          "WASHING": {
+            "f1": 0.4299384825700615,
+            "precision": 0.7902010050251256,
+            "recall": 0.2953051643192488,
+            "support": 2130
+          }
+        },
+        "weighted_f1": 0.4858894019662903
+      },
+      "params": "Ambang Config lama per jendela agregat. Bukan ML",
+      "timing": null,
+      "validation_holdout": null
+    },
+    {
+      "advantages": "Perilaku nyata sistem lama",
+      "algorithm": "baseline_fsm_lama",
+      "artifact_bytes": null,
+      "cv_macro_f1_max": 0.7549953314659197,
+      "cv_macro_f1_mean": 0.4492734694545295,
+      "cv_macro_f1_min": 0.14281318114070726,
+      "cv_macro_f1_per_fold": [
+        0.7549953314659197,
+        0.14281318114070726,
+        0.44704615651604845,
+        0.454859756230143,
+        0.751106590865627,
+        0.1448198005087313
+      ],
+      "feature_set": "-",
+      "kind": "baseline",
+      "limitations": "Tertinggal karena syarat durasi dan moving average; pemetaan tidak sepenuhnya sebanding",
+      "n_grid": 0,
+      "name": "baseline_fsm_lama",
+      "oof_metrics": {
+        "accuracy": 0.4600063231109706,
+        "active_predicted_idle_rate": 0.46730038022813686,
+        "balanced_accuracy": 0.48331564622255113,
+        "confusion_matrix": {
+          "labels": [
+            "IDLE",
+            "SPIN",
+            "WASHING"
+          ],
+          "rows_true_cols_pred": [
+            [
+              222,
+              0,
+              311
+            ],
+            [
+              35,
+              297,
+              168
+            ],
+            [
+              1194,
+              0,
+              936
+            ]
+          ]
+        },
+        "macro_f1": 0.4990509597589532,
+        "macro_precision": 0.6048273438001005,
+        "macro_recall": 0.48331564622255113,
+        "n": 3163,
+        "per_class": {
+          "IDLE": {
+            "f1": 0.22379032258064516,
+            "precision": 0.15299793246037216,
+            "recall": 0.4165103189493433,
+            "support": 533
+          },
+          "SPIN": {
+            "f1": 0.7452948557089084,
+            "precision": 1.0,
+            "recall": 0.594,
+            "support": 500
+          },
+          "WASHING": {
+            "f1": 0.528067700987306,
+            "precision": 0.6614840989399293,
+            "recall": 0.4394366197183099,
+            "support": 2130
+          }
+        },
+        "weighted_f1": 0.5111324289892191
+      },
+      "params": "FSM lama mode real, state dipetakan ke aktivitas. DONE dianggap IDLE",
+      "timing": null,
+      "validation_holdout": null
+    }
+  ],
+  "controls": {
+    "row_split_macro_f1_INVALID_for_reference_only": 0.9483870659192908,
+    "shuffled_label_macro_f1": 0.22405654502833897,
+    "shuffled_label_warning": false
+  },
+  "data_kind": "synthetic",
+  "dataset_id": "syn_hard_v1",
+  "dataset_type": "SYNTHETIC",
+  "environment": "Linux-6.18.44-fc-v233-x86_64-with-glibc2.39",
+  "experiment_id": "exp_20261104T141944_624d6645",
+  "feature_importance": {
+    "acc_dyn_rms_max": 0.3102480694597498,
+    "acc_dyn_rms_mean": 0.04285487659804695,
+    "acc_dyn_rms_std": 3.2554894370191244e-18,
+    "acc_mag_ptp_max": 0.0048086833924764205,
+    "acc_mag_ptp_mean": 0.0055414415073289204,
+    "acc_mag_ptp_std": 0.010861352945068277,
+    "gyro_max_max": 0.5394265224613015,
+    "gyro_max_mean": 0.0010986901950335146,
+    "gyro_max_std": 0.0014461352274660977,
+    "gyro_rms_max": 0.015204259654655484,
+    "gyro_rms_mean": 0.06602511158645795,
+    "gyro_rms_std": 0.0024848569724149933
+  },
+  "feature_schema_version": 1,
+  "grid": "full",
+  "grids": {
+    "decision_tree/F1": [
+      {
+        "mean": 0.7798645672490877,
+        "params": {
+          "clf__max_depth": 3,
+          "clf__min_samples_leaf": 1
+        }
+      },
+      {
+        "mean": 0.7798645672490877,
+        "params": {
+          "clf__max_depth": 3,
+          "clf__min_samples_leaf": 5
+        }
+      },
+      {
+        "mean": 0.7798645672490877,
+        "params": {
+          "clf__max_depth": 3,
+          "clf__min_samples_leaf": 20
+        }
+      },
+      {
+        "mean": 0.7690947804063977,
+        "params": {
+          "clf__max_depth": 5,
+          "clf__min_samples_leaf": 1
+        }
+      },
+      {
+        "mean": 0.7691375672176196,
+        "params": {
+          "clf__max_depth": 5,
+          "clf__min_samples_leaf": 5
+        }
+      },
+      {
+        "mean": 0.7773715364316952,
+        "params": {
+          "clf__max_depth": 5,
+          "clf__min_samples_leaf": 20
+        }
+      },
+      {
+        "mean": 0.7662573753768566,
+        "params": {
+          "clf__max_depth": 8,
+          "clf__min_samples_leaf": 1
+        }
+      },
+      {
+        "mean": 0.7678573821240845,
+        "params": {
+          "clf__max_depth": 8,
+          "clf__min_samples_leaf": 5
+        }
+      },
+      {
+        "mean": 0.795312603361599,
+        "params": {
+          "clf__max_depth": 8,
+          "clf__min_samples_leaf": 20
+        }
+      }
+    ],
+    "decision_tree/F2": [
+      {
+        "mean": 0.7837448263409484,
+        "params": {
+          "clf__max_depth": 3,
+          "clf__min_samples_leaf": 1
+        }
+      },
+      {
+        "mean": 0.7837448263409484,
+        "params": {
+          "clf__max_depth": 3,
+          "clf__min_samples_leaf": 5
+        }
+      },
+      {
+        "mean": 0.7837448263409484,
+        "params": {
+          "clf__max_depth": 3,
+          "clf__min_samples_leaf": 20
+        }
+      },
+      {
+        "mean": 0.842508541791799,
+        "params": {
+          "clf__max_depth": 5,
+          "clf__min_samples_leaf": 1
+        }
+      },
+      {
+        "mean": 0.841323435198829,
+        "params": {
+          "clf__max_depth": 5,
+          "clf__min_samples_leaf": 5
+        }
+      },
+      {
+        "mean": 0.82952060133948,
+        "params": {
+          "clf__max_depth": 5,
+          "clf__min_samples_leaf": 20
+        }
+      },
+      {
+        "mean": 0.8481602228945437,
+        "params": {
+          "clf__max_depth": 8,
+          "clf__min_samples_leaf": 1
+        }
+      },
+      {
+        "mean": 0.8477852169379808,
+        "params": {
+          "clf__max_depth": 8,
+          "clf__min_samples_leaf": 5
+        }
+      },
+      {
+        "mean": 0.8454201338244807,
+        "params": {
+          "clf__max_depth": 8,
+          "clf__min_samples_leaf": 20
+        }
+      }
+    ],
+    "decision_tree/F3": [
+      {
+        "mean": 0.7847986158892074,
+        "params": {
+          "clf__max_depth": 3,
+          "clf__min_samples_leaf": 1
+        }
+      },
+      {
+        "mean": 0.7847986158892074,
+        "params": {
+          "clf__max_depth": 3,
+          "clf__min_samples_leaf": 5
+        }
+      },
+      {
+        "mean": 0.7823018723801982,
+        "params": {
+          "clf__max_depth": 3,
+          "clf__min_samples_leaf": 20
+        }
+      },
+      {
+        "mean": 0.7959421342889033,
+        "params": {
+          "clf__max_depth": 5,
+          "clf__min_samples_leaf": 1
+        }
+      },
+      {
+        "mean": 0.7890424970396722,
+        "params": {
+          "clf__max_depth": 5,
+          "clf__min_samples_leaf": 5
+        }
+      },
+      {
+        "mean": 0.787369707034697,
+        "params": {
+          "clf__max_depth": 5,
+          "clf__min_samples_leaf": 20
+        }
+      },
+      {
+        "mean": 0.8208203198803781,
+        "params": {
+          "clf__max_depth": 8,
+          "clf__min_samples_leaf": 1
+        }
+      },
+      {
+        "mean": 0.8267929011160454,
+        "params": {
+          "clf__max_depth": 8,
+          "clf__min_samples_leaf": 5
+        }
+      },
+      {
+        "mean": 0.8207657962302721,
+        "params": {
+          "clf__max_depth": 8,
+          "clf__min_samples_leaf": 20
+        }
+      }
+    ],
+    "logistic_regression/F1": [
+      {
+        "mean": 0.7064037592472462,
+        "params": {
+          "clf__C": 0.1
+        }
+      },
+      {
+        "mean": 0.7440011812250011,
+        "params": {
+          "clf__C": 1.0
+        }
+      },
+      {
+        "mean": 0.775820620884511,
+        "params": {
+          "clf__C": 10.0
+        }
+      }
+    ],
+    "logistic_regression/F2": [
+      {
+        "mean": 0.778193597256195,
+        "params": {
+          "clf__C": 0.1
+        }
+      },
+      {
+        "mean": 0.8016148021643749,
+        "params": {
+          "clf__C": 1.0
+        }
+      },
+      {
+        "mean": 0.8024918671789759,
+        "params": {
+          "clf__C": 10.0
+        }
+      }
+    ],
+    "logistic_regression/F3": [
+      {
+        "mean": 0.774009715602418,
+        "params": {
+          "clf__C": 0.1
+        }
+      },
+      {
+        "mean": 0.8014713184136167,
+        "params": {
+          "clf__C": 1.0
+        }
+      },
+      {
+        "mean": 0.8054972678179059,
+        "params": {
+          "clf__C": 10.0
+        }
+      }
+    ],
+    "random_forest/F1": [
+      {
+        "mean": 0.7858171724599062,
+        "params": {
+          "clf__max_depth": 5,
+          "clf__max_features": "sqrt",
+          "clf__min_samples_leaf": 1,
+          "clf__n_estimators": 100
+        }
+      },
+      {
+        "mean": 0.7852290762684527,
+        "params": {
+          "clf__max_depth": 5,
+          "clf__max_features": "sqrt",
+          "clf__min_samples_leaf": 5,
+          "clf__n_estimators": 100
+        }
+      },
+      {
+        "mean": 0.7966434299017263,
+        "params": {
+          "clf__max_depth": 8,
+          "clf__max_features": "sqrt",
+          "clf__min_samples_leaf": 1,
+          "clf__n_estimators": 100
+        }
+      },
+      {
+        "mean": 0.8091134263603994,
+        "params": {
+          "clf__max_depth": 8,
+          "clf__max_features": "sqrt",
+          "clf__min_samples_leaf": 5,
+          "clf__n_estimators": 100
+        }
+      },
+      {
+        "mean": 0.7989983165804411,
+        "params": {
+          "clf__max_depth": null,
+          "clf__max_features": "sqrt",
+          "clf__min_samples_leaf": 1,
+          "clf__n_estimators": 100
+        }
+      },
+      {
+        "mean": 0.8171495301115678,
+        "params": {
+          "clf__max_depth": null,
+          "clf__max_features": "sqrt",
+          "clf__min_samples_leaf": 5,
+          "clf__n_estimators": 100
+        }
+      }
+    ],
+    "random_forest/F2": [
+      {
+        "mean": 0.7611343352437658,
+        "params": {
+          "clf__max_depth": 5,
+          "clf__max_features": "sqrt",
+          "clf__min_samples_leaf": 1,
+          "clf__n_estimators": 100
+        }
+      },
+      {
+        "mean": 0.7588532058308434,
+        "params": {
+          "clf__max_depth": 5,
+          "clf__max_features": "sqrt",
+          "clf__min_samples_leaf": 5,
+          "clf__n_estimators": 100
+        }
+      },
+      {
+        "mean": 0.8032715643277584,
+        "params": {
+          "clf__max_depth": 8,
+          "clf__max_features": "sqrt",
+          "clf__min_samples_leaf": 1,
+          "clf__n_estimators": 100
+        }
+      },
+      {
+        "mean": 0.7961306632672708,
+        "params": {
+          "clf__max_depth": 8,
+          "clf__max_features": "sqrt",
+          "clf__min_samples_leaf": 5,
+          "clf__n_estimators": 100
+        }
+      },
+      {
+        "mean": 0.8271956950607612,
+        "params": {
+          "clf__max_depth": null,
+          "clf__max_features": "sqrt",
+          "clf__min_samples_leaf": 1,
+          "clf__n_estimators": 100
+        }
+      },
+      {
+        "mean": 0.8182749010155291,
+        "params": {
+          "clf__max_depth": null,
+          "clf__max_features": "sqrt",
+          "clf__min_samples_leaf": 5,
+          "clf__n_estimators": 100
+        }
+      }
+    ],
+    "random_forest/F3": [
+      {
+        "mean": 0.7725885949546448,
+        "params": {
+          "clf__max_depth": 5,
+          "clf__max_features": "sqrt",
+          "clf__min_samples_leaf": 1,
+          "clf__n_estimators": 100
+        }
+      },
+      {
+        "mean": 0.7712478340723369,
+        "params": {
+          "clf__max_depth": 5,
+          "clf__max_features": "sqrt",
+          "clf__min_samples_leaf": 5,
+          "clf__n_estimators": 100
+        }
+      },
+      {
+        "mean": 0.825973471266062,
+        "params": {
+          "clf__max_depth": 8,
+          "clf__max_features": "sqrt",
+          "clf__min_samples_leaf": 1,
+          "clf__n_estimators": 100
+        }
+      },
+      {
+        "mean": 0.8206669979281617,
+        "params": {
+          "clf__max_depth": 8,
+          "clf__max_features": "sqrt",
+          "clf__min_samples_leaf": 5,
+          "clf__n_estimators": 100
+        }
+      },
+      {
+        "mean": 0.8380141171643509,
+        "params": {
+          "clf__max_depth": null,
+          "clf__max_features": "sqrt",
+          "clf__min_samples_leaf": 1,
+          "clf__n_estimators": 100
+        }
+      },
+      {
+        "mean": 0.8358700198616256,
+        "params": {
+          "clf__max_depth": null,
+          "clf__max_features": "sqrt",
+          "clf__min_samples_leaf": 5,
+          "clf__n_estimators": 100
+        }
+      }
+    ]
+  },
+  "learning_curve": [
+    {
+      "macro_f1_max": 1.0,
+      "macro_f1_mean": 0.5939643258622295,
+      "macro_f1_min": 0.10817610062893081,
+      "n_train_cycles": 1
+    },
+    {
+      "macro_f1_max": 0.9220068055087588,
+      "macro_f1_mean": 0.6578630161083315,
+      "macro_f1_min": 0.1111111111111111,
+      "n_train_cycles": 2
+    },
+    {
+      "macro_f1_max": 0.9569872206753766,
+      "macro_f1_mean": 0.7112313595836836,
+      "macro_f1_min": 0.32537424056351133,
+      "n_train_cycles": 3
+    },
+    {
+      "macro_f1_max": 0.9341649650613618,
+      "macro_f1_mean": 0.7616630555705198,
+      "macro_f1_min": 0.1551160562567407,
+      "n_train_cycles": 4
+    },
+    {
+      "macro_f1_max": 0.9569872206753766,
+      "macro_f1_mean": 0.8481602228945437,
+      "macro_f1_min": 0.66950552501527,
+      "n_train_cycles": 5
+    }
+  ],
+  "model_dir": "models/development/SYNTHETIC_syn_hard_v1-v1-decision_tree-F2-624d6645",
+  "n_folds": 6,
+  "pause_analysis_dev": {
+    "longest_pause_s": 120.6,
+    "per_cycle": {
+      "SYNTHETIC_SYNM1_C01": {
+        "longest_s": 120.6,
+        "pauses_s": [
+          120.6,
+          60.1
+        ]
+      },
+      "SYNTHETIC_SYNM1_C02": {
+        "longest_s": 120.1,
+        "pauses_s": [
+          120.1,
+          60.2
+        ]
+      },
+      "SYNTHETIC_SYNM1_C03": {
+        "longest_s": 120.4,
+        "pauses_s": [
+          120.4,
+          60.2
+        ]
+      },
+      "SYNTHETIC_SYNM1_C06": {
+        "longest_s": 120.3,
+        "pauses_s": [
+          120.3,
+          60.2
+        ]
+      },
+      "SYNTHETIC_SYNM1_C07": {
+        "longest_s": 120.4,
+        "pauses_s": [
+          120.4,
+          60.6
+        ]
+      },
+      "SYNTHETIC_SYNM1_C08": {
+        "longest_s": 120.6,
+        "pauses_s": [
+          120.6,
+          60.4
+        ]
+      }
+    }
+  },
+  "seed": 42,
+  "selected": "decision_tree/F2",
+  "selection_rule": "macro-F1 CV tertinggi; selisih <= 0.01 memilih yang lebih sederhana; p95 <= 100.0 ms",
+  "split_version": "v1",
+  "split_warnings": [
+    "DATA SINTETIS: split ini hanya menguji perangkat lunak dan tidak boleh dipakai untuk klaim performa",
+    "Hanya satu mesin. Klaim generalisasi antar-mesin tidak boleh dibuat"
+  ],
+  "threshold": {
+    "rule": "macro-F1 out-of-fold tertinggi saat jendela di bawah ambang memakai aturan; seri ke ambang terendah",
+    "table": [
+      {
+        "accuracy_when_used": 0.8438191590262409,
+        "coverage": 1.0,
+        "hybrid_macro_f1": 0.8315519497647784,
+        "threshold": 0.0
+      },
+      {
+        "accuracy_when_used": 0.8438191590262409,
+        "coverage": 1.0,
+        "hybrid_macro_f1": 0.8315519497647784,
+        "threshold": 0.4
+      },
+      {
+        "accuracy_when_used": 0.8438191590262409,
+        "coverage": 1.0,
+        "hybrid_macro_f1": 0.8315519497647784,
+        "threshold": 0.5
+      },
+      {
+        "accuracy_when_used": 0.8432883750802826,
+        "coverage": 0.9845083781220361,
+        "hybrid_macro_f1": 0.8246445414567266,
+        "threshold": 0.6
+      },
+      {
+        "accuracy_when_used": 0.8590207032533684,
+        "coverage": 0.9620613341764148,
+        "hybrid_macro_f1": 0.8242568218939342,
+        "threshold": 0.7
+      },
+      {
+        "accuracy_when_used": 0.8611935377514013,
+        "coverage": 0.958899778691116,
+        "hybrid_macro_f1": 0.8267632365140946,
+        "threshold": 0.8
+      },
+      {
+        "accuracy_when_used": 0.8713007570543703,
+        "coverage": 0.9187480240278217,
+        "hybrid_macro_f1": 0.8216270234564669,
+        "threshold": 0.9
+      }
+    ],
+    "threshold": 0.0
+  },
+  "training_timestamp": "2026-11-04T14:19:44.247071+00:00",
+  "versions": {
+    "joblib": "1.6.0",
+    "numpy": "2.5.3",
+    "python": "3.13.18",
+    "scikit_learn": "1.9.1"
+  }
+}

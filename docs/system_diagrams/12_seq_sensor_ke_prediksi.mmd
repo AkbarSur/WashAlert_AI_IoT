@@ -1,0 +1,40 @@
+sequenceDiagram
+  participant S as sensors.py
+  participant E as edge_runner.py
+  participant M as Broker MQTT
+  participant D as main.py
+  participant F as rules.py
+  participant C as activity.py
+  participant I as inference.py
+  participant W as Dashboard
+  loop N pembacaan
+    E->>S: read()
+    S-->>E: SensorSample + tanda fresh
+  end
+  E->>E: extract_features + compute_window_features
+  alt Tersambung
+    E->>M: telemetry v2, QoS 1
+  else Terputus
+    E->>E: buang jendela, hitung dropped
+  end
+  M->>D: telemetry
+  D->>D: Telemetry.from_json, cek topik
+  D->>F: accept(reading, now)
+  F->>F: stale, replay, armed
+  F->>C: estimate(reading, now, state)
+  C->>C: perbarui jendela agregat
+  alt HYBRID, model siap, fitur lengkap
+    C->>I: predict(vektor fitur)
+    I-->>C: label + probabilitas
+    alt Probabilitas di bawah ambang
+      C->>C: pakai aturan, rule_low_probability
+    end
+  else Tidak memenuhi syarat
+    C->>C: pakai aturan, catat alasan
+  end
+  C->>C: smoothing voting mayoritas
+  C-->>F: ActivityEstimate
+  F->>F: advance(aktivitas, now)
+  F-->>D: Decision
+  D->>M: status + field model, retained
+  M->>W: status

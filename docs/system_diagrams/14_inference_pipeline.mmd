@@ -1,0 +1,22 @@
+flowchart TB
+  subgraph START["Saat detector mulai"]
+    S1{"DETECTION_MODE"} -->|RULE_ONLY| S2["Mode efektif RULE_ONLY"]
+    S1 -->|HYBRID| S3["Cek file, sha256, metadata,<br/>versi dependensi, skema fitur"]
+    S3 -->|gagal| S4["RULE_ONLY + fallback_reason"]
+    S3 -->|lolos| S5["joblib.load, mode efektif HYBRID"]
+  end
+  subgraph RUN["Setiap telemetry HP A valid"]
+    R1["Tambah ke jendela agregat"] --> R2{"Model siap, schema v2,<br/>tanpa sensor_fault, gyro cukup,<br/>minimal 3 jendela dan 20 dtk?"}
+    R2 -->|tidak| R5["Aktivitas aturan + alasan"]
+    R2 -->|ya| R3["Vektor sesuai feature_names,<br/>predict_proba"]
+    R3 --> R4{"Probabilitas tertinggi<br/>≥ ambang?"}
+    R4 -->|tidak| R5
+    R4 -->|ya| R6["Aktivitas model"]
+    R5 --> R7["Voting mayoritas N = 5"]
+    R6 --> R7
+    R7 --> R8["FSM advance"]
+    R8 --> R9["Decision + status"]
+  end
+  S2 --> R1
+  S4 --> R1
+  S5 --> R1
